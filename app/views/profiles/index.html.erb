@@ -1,0 +1,45 @@
+<h1>Listing profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Actibity level</th>
+      <th>Calories need</th>
+      <th>Protein need</th>
+      <th>Fat need</th>
+      <th>Carbs need</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.name %></td>
+        <td><%= profile.sex %></td>
+        <td><%= profile.age %></td>
+        <td><%= profile.weight %></td>
+        <td><%= profile.height %></td>
+        <td><%= profile.actibity_level %></td>
+        <td><%= profile.calories_need %></td>
+        <td><%= profile.protein_need %></td>
+        <td><%= profile.fat_need %></td>
+        <td><%= profile.carbs_need %></td>
+        <td><%= link_to 'Show', profile %></td>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile', new_profile_path %>

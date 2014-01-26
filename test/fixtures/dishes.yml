@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dish_name: MyString
+  steps: MyText
+  dish_protein: 1.5
+  dish_fat: 1.5
+  dish_carbs: 1.5
+  dish_calories: 1.5
+  ingredient_id: 1
+
+two:
+  dish_name: MyString
+  steps: MyText
+  dish_protein: 1.5
+  dish_fat: 1.5
+  dish_carbs: 1.5
+  dish_calories: 1.5
+  ingredient_id: 1

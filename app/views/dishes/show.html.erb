@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dish name:</strong>
+  <%= @dish.dish_name %>
+</p>
+
+<p>
+  <strong>Steps:</strong>
+  <%= @dish.steps %>
+</p>
+
+<p>
+  <strong>Dish protein:</strong>
+  <%= @dish.dish_protein %>
+</p>
+
+<p>
+  <strong>Dish fat:</strong>
+  <%= @dish.dish_fat %>
+</p>
+
+<p>
+  <strong>Dish carbs:</strong>
+  <%= @dish.dish_carbs %>
+</p>
+
+<p>
+  <strong>Dish calories:</strong>
+  <%= @dish.dish_calories %>
+</p>
+
+<p>
+  <strong>Ingredient:</strong>
+  <%= @dish.ingredient_id %>
+</p>
+
+<%= link_to 'Edit', edit_dish_path(@dish) %> |
+<%= link_to 'Back', dishes_path %>

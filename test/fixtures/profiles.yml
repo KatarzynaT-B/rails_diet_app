@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  sex: 1
+  age: 1
+  weight: 1
+  height: 1
+  actibity_level: 1
+  calories_need: 1.5
+  protein_need: 1.5
+  fat_need: 1.5
+  carbs_need: 1.5
+
+two:
+  name: MyString
+  sex: 1
+  age: 1
+  weight: 1
+  height: 1
+  actibity_level: 1
+  calories_need: 1.5
+  protein_need: 1.5
+  fat_need: 1.5
+  carbs_need: 1.5

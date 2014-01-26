@@ -1,0 +1,39 @@
+<h1>Listing dishes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dish name</th>
+      <th>Steps</th>
+      <th>Dish protein</th>
+      <th>Dish fat</th>
+      <th>Dish carbs</th>
+      <th>Dish calories</th>
+      <th>Ingredient</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dishes.each do |dish| %>
+      <tr>
+        <td><%= dish.dish_name %></td>
+        <td><%= dish.steps %></td>
+        <td><%= dish.dish_protein %></td>
+        <td><%= dish.dish_fat %></td>
+        <td><%= dish.dish_carbs %></td>
+        <td><%= dish.dish_calories %></td>
+        <td><%= dish.ingredient_id %></td>
+        <td><%= link_to 'Show', dish %></td>
+        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
+        <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dish', new_dish_path %>
