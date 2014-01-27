@@ -1,5 +1,6 @@
 class DishesController < ApplicationController
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
+  before_action :set_products, except: [:index, :show, :destroy]
 
   def index
     @dishes = Dish.all
@@ -56,7 +57,12 @@ class DishesController < ApplicationController
       @dish = Dish.find(params[:id])
     end
 
+    def set_products
+      @products = Product.all
+    end
+
     def dish_params
       params.require(:dish).permit(:dish_name, :steps, :dish_protein, :dish_fat, :dish_carbs, :dish_calories, :ingredient_id)
     end
+
 end

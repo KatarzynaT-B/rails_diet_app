@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
+  include ProfilesHelper
+
   def index
     @profiles = Profile.all
     redirect_to new_profile_path if @profiles.empty?
@@ -61,6 +63,6 @@ class ProfilesController < ApplicationController
     end
 
     def profile_params
-      params.require(:profile).permit(:name, :sex, :age, :weight, :height, :actibity_level, :calories_need, :protein_need, :fat_need, :carbs_need)
+      params.require(:profile).permit(:name, :sex, :age, :weight, :height, :activity_level, :calories_need, :protein_need, :fat_need, :carbs_need)
     end
 end

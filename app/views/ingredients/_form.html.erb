@@ -1,0 +1,14 @@
+<%= form_for(@ingredient) do |f| %>
+
+  <div class="field">
+    <%= f.label :product_id, 'Wybierz składnik' %><br>
+    <%= f.select :product_id, @products.each {|product| [product.name, product.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity_per_dish, 'Podaj potrzebną ilość składnika' %><br>
+    <%= f.number_field :quantity_per_dish %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

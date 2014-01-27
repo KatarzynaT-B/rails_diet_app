@@ -12,28 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, 'Podaj nazwę produktu' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :calories %><br>
-    <%= f.number_field :calories %>
-  </div>
-  <div class="field">
-    <%= f.label :protein %><br>
+    <%= f.label :protein, 'Podaj zawartość białka na 100g' %><br>
     <%= f.text_field :protein %>
   </div>
   <div class="field">
-    <%= f.label :fat %><br>
+    <%= f.label :fat, 'Podaj zawartość tłuszczu na 100g' %><br>
     <%= f.text_field :fat %>
   </div>
   <div class="field">
-    <%= f.label :carbs %><br>
+    <%= f.label :carbs, 'Podaj zawartość węglowodanów na 100g' %><br>
     <%= f.text_field :carbs %>
-  </div>
-  <div class="field">
-    <%= f.label :ingredient_id %><br>
-    <%= f.number_field :ingredient_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

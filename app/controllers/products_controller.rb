@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  include ProductsHelper
+
   def index
     @products = Product.all
     redirect_to new_product_path if @products.empty?
@@ -21,6 +23,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        count_calories(@product)
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render action: 'show', status: :created, location: @product }
       else
@@ -33,6 +36,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
+        count_calories(@product)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else

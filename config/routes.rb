@@ -7,6 +7,8 @@ DietApp::Application.routes.draw do
 
   resources :dishes
 
+  resources :ingredients
+
   resources :articles
 
   get '/about' => 'base#about'
