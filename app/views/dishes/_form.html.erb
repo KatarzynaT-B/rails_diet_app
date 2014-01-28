@@ -16,21 +16,26 @@
     <%= f.text_field :dish_name %>
   </div>
 
+  <h3>Składniki</h3>
+  <%= f.fields_for :ingredients do |ingredient_builder| %>
+    <div class="field">
+      <%= ingredient_builder.label :product_id, 'Wybierz składnik' %>
+      <%= ingredient_builder.select :product_id, @products.each.collect {|product| [product.name, product.id]} %>
+    </div>
+
+    <div class="field">
+      <%= ingredient_builder.label :quantity_per_dish, 'Podaj potrzebną ilość składnika' %>
+      <%= ingredient_builder.number_field :quantity_per_dish %>
+      <% if ingredient_builder.object.persisted? %>
+        <%= ingredient_builder.check_box :_destroy %>
+        <%= ingredient_builder.label :_destroy, 'Usuń składnik' %>
+      <% end %>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :steps %><br>
     <%= f.text_area :steps %>
-  </div>
-  <div class="field">
-    <%= f.label :dish_protein %><br>
-    <%= f.text_field :dish_protein %>
-  </div>
-  <div class="field">
-    <%= f.label :dish_fat %><br>
-    <%= f.text_field :dish_fat %>
-  </div>
-  <div class="field">
-    <%= f.label :dish_carbs %><br>
-    <%= f.text_field :dish_carbs %>
   </div>
   <div class="actions">
     <%= f.submit %>

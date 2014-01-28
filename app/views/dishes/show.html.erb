@@ -6,6 +6,17 @@
 </p>
 
 <p>
+  <strong>Składniki</strong>
+  <ul>
+    <% @dish.ingredients.each do |ingredient| %>
+      <li>
+        <%= "#{@products.find(ingredient.product_id).name} - #{ingredient.quantity_per_dish} g" %>
+      </li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
   <strong>Steps:</strong>
   <%= @dish.steps %>
 </p>

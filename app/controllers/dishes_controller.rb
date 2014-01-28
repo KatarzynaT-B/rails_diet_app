@@ -1,6 +1,6 @@
 class DishesController < ApplicationController
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
-  before_action :set_products, except: [:index, :show, :destroy]
+  before_action :set_products, except: [:index, :destroy]
 
   def index
     @dishes = Dish.all
@@ -12,6 +12,7 @@ class DishesController < ApplicationController
 
   def new
     @dish = Dish.new
+    5.times { @dish.ingredients.build }
   end
 
   def edit
@@ -62,7 +63,8 @@ class DishesController < ApplicationController
     end
 
     def dish_params
-      params.require(:dish).permit(:dish_name, :steps, :dish_protein, :dish_fat, :dish_carbs, :dish_calories, :ingredient_id)
+      params.require(:dish).permit(:dish_name, :steps, :dish_protein, :dish_fat, :dish_carbs, :dish_calories,
+                                    ingredients_attributes: [:id, :quantity_per_dish, :product_id, :dish_id])
     end
 
 end
