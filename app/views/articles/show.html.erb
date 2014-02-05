@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Tytuł:</strong>
   <%= @article.title %>
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong>Autor:</strong>
   <%= @article.author %>
 </p>
 
 <p>
-  <strong>Source:</strong>
+  <strong>Źródło:</strong>
   <%= @article.source %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Treść:</strong>
   <%= @article.content %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Zmień', edit_article_path(@article) %> |
+<%= link_to 'Wróć', articles_path %>

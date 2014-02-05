@@ -2,14 +2,13 @@ DietApp::Application.routes.draw do
   root 'base#about'
 
   resources :profiles
-
   resources :products
-
   resources :dishes
-
   resources :ingredients
-
   resources :articles
+  resources :dish_types
+  resources :meals
+  resources :menus
 
   get '/about' => 'base#about'
   get '/contact' => 'base#contact'

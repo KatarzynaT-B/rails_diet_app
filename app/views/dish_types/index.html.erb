@@ -1,0 +1,12 @@
+<h1>Typy posiłków:</h1>
+
+<table>
+  <% @dish_types.each do |dish_type| %>
+    <tr>
+      <td><%= dish_type.name %></td>
+      <td><%= link_to 'Zmień', edit_dish_type_path(dish_type) %></td>
+      <td><%= link_to 'Usuń', dish_type, method: :delete, data: { confirm: 'Na pewno chcesz usunąć ten typ?' } %></td>
+  <% end %>
+</table>
+
+<%= link_to 'Dodaj nowy artykuł', new_dish_type_path %>

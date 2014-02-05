@@ -70,4 +70,8 @@ module ProfilesHelper
                    carbs_need: count_carbs_need(profile))
   end
 
+  def profile_sex_description(profile)
+    profile.sex == 1 ? "kobieta" : "mężczyzna"
+  end
+
 end

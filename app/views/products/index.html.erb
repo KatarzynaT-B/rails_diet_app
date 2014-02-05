@@ -1,32 +1,29 @@
-<h1>Listing products</h1>
+<h1>Dostępne produkty</h1>
 
 <table>
+  <caption>Dla 100 g</caption>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Calories</th>
-      <th>Protein</th>
-      <th>Fat</th>
-      <th>Carbs</th>
-      <th>Ingredient</th>
-      <th></th>
+      <th>Produkt</th>
+      <th>Kalorie</th>
+      <th>Białko</th>
+      <th>Tłuszcze</th>
+      <th>Węglowodany</th>
       <th></th>
       <th></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @products.each do |product| %>
+    <% @product_values.each do |product, product_values| %>
       <tr>
-        <td><%= product.name %></td>
-        <td><%= product.calories %></td>
-        <td><%= product.protein %></td>
-        <td><%= product.fat %></td>
-        <td><%= product.carbs %></td>
-        <td><%= product.ingredient_id %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to product.name, product %></td>
+        <td><%= "#{product.calories} kcal" %></td>
+        <td><%= "#{product.protein} g (#{product_values[:protein]} kcal)" %></td>
+        <td><%= "#{product.fat} g (#{product_values[:fat]} kcal)" %></td>
+        <td><%= "#{product.carbs} g (#{product_values[:carbs]} kcal)" %></td>
+        <td><%= link_to 'Zmień', edit_product_path(product) %></td>
+        <td><%= link_to 'Usuń', product, method: :delete, data: { confirm: 'Na pewno chcesz usunąć produkt?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'Dodaj nowy produkt', new_product_path %>

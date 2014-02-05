@@ -1,6 +1,6 @@
 class DishesController < ApplicationController
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
-  before_action :set_products, except: [:index, :destroy]
+  before_action :set_products, except: :destroy
 
   def index
     @dishes = Dish.all
@@ -8,11 +8,12 @@ class DishesController < ApplicationController
   end
 
   def show
+    @ingredients_collection = calculate_ingredients_values(@dish)
   end
 
   def new
     @dish = Dish.new
-    5.times { @dish.ingredients.build }
+    @dish.ingredients.build
   end
 
   def edit
@@ -20,9 +21,10 @@ class DishesController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
-
     respond_to do |format|
       if @dish.save
+        @ingredients_collection = calculate_ingredients_values(@dish)
+        calculate_dish_values(@ingredients_collection, @dish)
         format.html { redirect_to @dish, notice: 'Dish was successfully created.' }
         format.json { render action: 'show', status: :created, location: @dish }
       else
@@ -35,6 +37,8 @@ class DishesController < ApplicationController
   def update
     respond_to do |format|
       if @dish.update(dish_params)
+        @ingredients_collection = calculate_ingredients_values(@dish)
+        calculate_dish_values(@ingredients_collection, @dish)
         format.html { redirect_to @dish, notice: 'Dish was successfully updated.' }
         format.json { head :no_content }
       else
@@ -64,7 +68,7 @@ class DishesController < ApplicationController
 
     def dish_params
       params.require(:dish).permit(:dish_name, :steps, :dish_protein, :dish_fat, :dish_carbs, :dish_calories,
-                                    ingredients_attributes: [:id, :quantity_per_dish, :product_id, :dish_id])
+                                    ingredients_attributes: [:quantity_per_dish, :product_id, :dish_id])
     end
 
 end

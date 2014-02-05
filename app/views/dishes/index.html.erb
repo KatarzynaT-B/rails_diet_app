@@ -1,16 +1,13 @@
-<h1>Listing dishes</h1>
+<h1>Dania</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Dish name</th>
-      <th>Steps</th>
-      <th>Dish protein</th>
-      <th>Dish fat</th>
-      <th>Dish carbs</th>
-      <th>Dish calories</th>
-      <th>Ingredient</th>
       <th></th>
+      <th>Kalorie</th>
+      <th>Białko</th>
+      <th>Tłuszcze</th>
+      <th>Węglowodany</th>
       <th></th>
       <th></th>
     </tr>
@@ -19,16 +16,13 @@
   <tbody>
     <% @dishes.each do |dish| %>
       <tr>
-        <td><%= dish.dish_name %></td>
-        <td><%= dish.steps %></td>
-        <td><%= dish.dish_protein %></td>
-        <td><%= dish.dish_fat %></td>
-        <td><%= dish.dish_carbs %></td>
-        <td><%= dish.dish_calories %></td>
-        <td><%= dish.ingredient_id %></td>
-        <td><%= link_to 'Show', dish %></td>
-        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-        <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to dish.dish_name, dish %></td>
+        <td><%= "#{dish.dish_calories} kcal" %></td>
+        <td><%= "#{dish.dish_protein} g" %></td>
+        <td><%= "#{dish.dish_fat} g" %></td>
+        <td><%= "#{dish.dish_carbs}g" %></td>
+        <td><%= link_to 'Zmień', edit_dish_path(dish) %></td>
+        <td><%= link_to 'Usuń', dish, method: :delete, data: { confirm: 'Na pewno chcesz usunąć danie?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Dish', new_dish_path %>
+<%= link_to 'Dodaj nowe danie', new_dish_path %>

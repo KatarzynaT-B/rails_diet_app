@@ -11,3 +11,57 @@
  *= require_self
  *= require_tree .
  */
+body {
+    margin: 35px auto;
+    width: 1200px;
+    background-color: #EEE8C6;
+    color: #464A53;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+nav {
+    background-color:#464A53;
+    height:70px;
+}
+
+nav h1 {
+    font-family: Arial;
+    font-size: 40px;
+    color: #EEE8C6;
+}
+
+nav ul {
+    font-family: Arial;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: block;
+    position: relative;
+    float: right;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 7px 15px 3px 15px;
+    background: #339AAD;
+    color: #EEE8C6;
+    margin-left: 1px;
+    white-space: nowrap;
+    height:30px; /* Width and height of top-level nav items */
+    width:115px;
+    text-align:center;
+}
+
+nav ul li a:hover {
+    background: #CC6371;
+}
+

@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, 'Nazwa profilu' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :sex %><br>
+    <%= f.label :sex, 'Płeć' %><br>
     <%= f.radio_button :sex, '1' %>Kobieta
     <%= f.radio_button :sex, '2' %>Mężczyzna
   </div>
   <div class="field">
-    <%= f.label :age %><br>
+    <%= f.label :age, 'Wiek' %><br>
     <%= f.select :age, 18..75 %>
   </div>
   <div class="field">
-    <%= f.label :weight %><br>
+    <%= f.label :weight, 'Waga' %><br>
     <%= f.number_field :weight %>
   </div>
   <div class="field">
-    <%= f.label :height %><br>
+    <%= f.label :height, 'Wzrost' %><br>
     <%= f.number_field :height %>
   </div>
   <div class="field">
-    <%= f.label :activity_level %>Poziom aktywności - wybierz, kierując się opisami pod formularzem:<br>
+    <%= f.label :activity_level, 'Poziom aktywności - wybierz, kierując się opisami pod formularzem:' %><br>
     <%= f.radio_button :activity_level, 1 %>brak aktywności - całkowicie ograniczona aktywność fizyczna (niepełnosprawność ruchowa, paraliż, przewlekła hospitalizacja)<br>
     <%= f.radio_button :activity_level, 2 %>bardzo niska aktywność - praca siedząca, brak dodatkowej aktywności po pracy<br>
     <%= f.radio_button :activity_level, 3 %>niska aktywność - praca siedząca, ograniczona aktywność po pracy<br>
@@ -42,6 +42,6 @@
     <%= f.radio_button :activity_level, 6 %>bardzo duża aktywność - ciężka praca fizyczna, sport wyczynowy</p><br>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Zapisz" %>
   </div>
 <% end %>

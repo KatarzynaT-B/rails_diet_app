@@ -1,0 +1,26 @@
+<h1>Twoje jadłospisy:</h1>
+
+<table>
+  <% @menus.each do |menu| %>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Liczba posiłków</th>
+        <th>Dawka kalorii</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= link_to menu.name, menu %></td>
+        <td><%= menu.meals_no %></td>
+        <td><%= "#{menu.calories} kcal" %></td>
+        <td><%= link_to 'Zmień', edit_menu_path(menu) %></td>
+        <td><%= link_to 'Usuń', menu, method: :delete, data: { confirm: 'Na pewno chcesz usunąć jadłospis?' } %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
+
+<%= link_to 'Dodaj nowy jadłospis', new_menu_path %>

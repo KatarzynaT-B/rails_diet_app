@@ -1,29 +1,37 @@
-<h1>Listing profiles</h1>
+<h1>Profile:</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>Weight</th>
-      <th>Height</th>
-      <th>Activity level</th>
-      <th>Calories need</th>
-      <th>Protein need</th>
-      <th>Fat need</th>
-      <th>Carbs need</th>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th colspan="4">Dzienne zapotrzebowanie</th>
+      <th rowspan="2"></th>
+      <th rowspan="2"></th>
+    </tr>
+    <tr>
+      <th>Nazwa</th>
+      <th>Płeć</th>
+      <th>Wiek</th>
+      <th>Waga</th>
+      <th>Wzrost</th>
+      <th>Poziom aktywności</th>
+      <th>Kalorie</th>
+      <th>Białko</th>
+      <th>Tłuszcze</th>
+      <th>Węglowodany</th>
     </tr>
   </thead>
 
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%= profile.name %></td>
-        <td><%= profile.sex %></td>
+        <td><%= link_to profile.name, profile %></td>
+        <td><%= profile_sex_description(profile) %></td>
         <td><%= profile.age %></td>
         <td><%= profile.weight %></td>
         <td><%= profile.height %></td>
@@ -32,9 +40,8 @@
         <td><%= profile.protein_need %></td>
         <td><%= profile.fat_need %></td>
         <td><%= profile.carbs_need %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Zmień', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Usuń', profile, method: :delete, data: { confirm: 'Na pewno chcesz usunąć ten profil?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +49,6 @@
 
 <br>
 
-<%= link_to 'New Profile', new_profile_path %>
+<%= link_to 'Dodaj nowy profil', new_profile_path %>
+
+<%= render 'activity_levels' %>

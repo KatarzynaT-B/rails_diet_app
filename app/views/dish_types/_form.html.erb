@@ -1,0 +1,22 @@
+<%= form_for(@dish_type) do |f| %>
+  <% if @dish_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dish_type.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% @dish_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, 'Typ posiłku' %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Zapisz typ posiłku" %>
+  </div>
+<% end %>

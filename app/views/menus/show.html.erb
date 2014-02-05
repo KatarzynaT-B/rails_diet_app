@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @menu.name.titleize %></h1>
+
+<table>
+  <caption>Jadłospis - wartości odżywcze:</caption>
+  <tr>
+    <th>Kalorie</th>
+    <th>Białko</th>
+    <th>Tłuszcze</th>
+    <th>Węglowodany</th>
+  </tr>
+  <tr>
+  <th><%= "#{@menu_values[:calories]} kcal" %></th>
+  <th><%= "#{@menu_values[:protein]} g" %></th>
+  <th><%= "#{@menu_values[:fat]} g" %></th>
+  <th><%= "#{@menu_values[:carbs]} g" %></th>
+</table>
+
+<h2>Posiłki:</h2>
+
+<% @meals_collection.each_value do |meal| %>
+    <fieldset>
+
+      <legend><%= "#{meal[:type].titleize} - #{meal[:name].titleize}" %></legend>
+
+      <table>
+        <tr>
+          <th>Składnik</th>
+          <th>Ilość</th>
+          <th>Kalorie</th>
+        </tr>
+        <% meal[:ingredients].each do | ingredient_name, ingredient_values | %>
+            <tr>
+              <td><%= ingredient_name %></td>
+              <td><%= "#{ingredient_values[:amount]} g" %></td>
+              <td><%= "#{ingredient_values[:calories]} kcal" %></td>
+            </tr>
+        <% end %>
+      </table>
+
+      <h4>Wykonanie:</h4>
+      <p><%= meal[:steps] %></p>
+
+      <table>
+        <tr>
+          <th>Łącznie:</th>
+          <th>Kalorie</th>
+          <th>Białko</th>
+          <th>Tłuszcze</th>
+          <th>Węglowodany</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= "#{meal[:values][:calories]} kcal" %></td>
+          <td><%= "#{meal[:values][:protein]} g" %></td>
+          <td><%= "#{meal[:values][:fat]} g" %></td>
+          <td><%= "#{meal[:values][:carbs]} g" %></td>
+        </tr>
+      </table>
+    </fieldset>
+<% end %>
+
+<%= link_to 'Zmień jadłospis', edit_menu_path(@menu) %> |
+<%= link_to 'Wróć do listy jadłospisów', menus_path %>

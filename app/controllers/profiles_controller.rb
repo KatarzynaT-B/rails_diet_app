@@ -5,11 +5,13 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = Profile.all
+    @profiles.each do |profile|
+      update_profile_with_needs(profile)
+    end
     redirect_to new_profile_path if @profiles.empty?
   end
 
   def show
-    @sex = (@profile.sex == 1 ? "kobieta" : "mężczyzna")
     @protein_kcal, @fat_kcal, @carbs_kcal = grams_to_kcal(@profile)
   end
 
@@ -26,7 +28,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @profile.save
         update_profile_with_needs(@profile)
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+        format.html { redirect_to @profile, notice: 'Profil został utworzony' }
         format.json { render action: 'show', status: :created, location: @profile }
       else
         format.html { render action: 'new' }
@@ -39,7 +41,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @profile.update(profile_params)
         update_profile_with_needs(@profile)
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
+        format.html { redirect_to @profile, notice: 'Profil został uaktualniony' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

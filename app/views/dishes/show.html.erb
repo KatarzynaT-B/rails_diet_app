@@ -1,50 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Dish name:</strong>
-  <%= @dish.dish_name %>
-</p>
+<h1><%= @dish.dish_name.titleize %></h1>>
 
-<p>
-  <strong>Składniki</strong>
-  <ul>
-    <% @dish.ingredients.each do |ingredient| %>
-      <li>
-        <%= "#{@products.find(ingredient.product_id).name} - #{ingredient.quantity_per_dish} g" %>
-      </li>
-    <% end %>
-  </ul>
-</p>
+<table>
+  <caption>Składniki:</caption>
+  <tr>
+    <th>Składnik</th>
+    <th>Ilość</th>
+    <th>Kalorie</th>
+    <th>Białko</th>
+    <th>Tłuszcze</th>
+    <th>Węglowodany</th>
+  </tr>
+  <% @ingredients_collection.each do | ingredient_name, ingredient_values | %>
+      <tr>
+        <td><%= ingredient_name %></td>
+        <td><%= "#{ingredient_values[:amount]} g" %></td>
+        <td><%= "#{ingredient_values[:calories]} kcal" %></td>
+        <td><%= "#{ingredient_values[:protein]} g" %></td>
+        <td><%= "#{ingredient_values[:fat]} g" %></td>
+        <td><%= "#{ingredient_values[:carbs]} g" %></td>
+      </tr>
+  <% end %>
+</table>
 
-<p>
-  <strong>Steps:</strong>
-  <%= @dish.steps %>
-</p>
+<h2>Wykonanie:</h2>
 
-<p>
-  <strong>Dish protein:</strong>
-  <%= @dish.dish_protein %>
-</p>
+<p><%= @dish.steps %></p>
 
-<p>
-  <strong>Dish fat:</strong>
-  <%= @dish.dish_fat %>
-</p>
+<table>
+  <caption>Wartość posiłku:</caption>
+  <tr>
+    <th>Kalorie</th>
+    <th>Białko</th>
+    <th>Tłuszcze</th>
+    <th>Węglowodany</th>
+  </tr>
+  <tr>
+    <td><%= "#{@dish.dish_calories} kcal" %></td>
+    <td><%= "#{@dish.dish_protein} g" %></td>
+    <td><%= "#{@dish.dish_fat} g" %></td>
+    <td><%= "#{@dish.dish_carbs} g" %></td>
+  </tr>
+</table>
 
-<p>
-  <strong>Dish carbs:</strong>
-  <%= @dish.dish_carbs %>
-</p>
-
-<p>
-  <strong>Dish calories:</strong>
-  <%= @dish.dish_calories %>
-</p>
-
-<p>
-  <strong>Ingredient:</strong>
-  <%= @dish.ingredient_id %>
-</p>
-
-<%= link_to 'Edit', edit_dish_path(@dish) %> |
-<%= link_to 'Back', dishes_path %>
+<%= link_to 'Zmień danie', edit_dish_path(@dish) %> |
+<%= link_to 'Wróć do listy dań', dishes_path %>

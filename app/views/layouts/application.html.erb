@@ -2,23 +2,25 @@
 <html>
 <head>
   <meta charset="utf8">
-  <title>DietApp</title>
+  <title>Jedzeniowo</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <header>
-    <h1>Jedzeniowo</h1>
-    <ul>
-      <li><%= link_to 'About', controller: 'base', action: 'about' %></li>
-      <li><%= link_to 'Kontakt', controller: 'base', action: 'contact' %></li>
-      <li><%= link_to 'Artykuły', articles_path %></li>
-      <li><%= link_to 'Produkty', products_path %></li>
-      <li><%= link_to 'Profile', profiles_path %></li>
-      <li><%= link_to 'Dania', dishes_path %></li>
-      <li>'Jadłospisy'</li>
-    </ul>
+    <nav id="navigation">
+      <h1>Jedzeniowo</h1>
+      <ul>
+        <li><%= link_to 'O nas', controller: 'base', action: 'about' %></li>
+        <li><%= link_to 'Artykuły', articles_path %></li>
+        <li><%= link_to 'Produkty', products_path %></li>
+        <li><%= link_to 'Profile', profiles_path %></li>
+        <li><%= link_to 'Dania', dishes_path %></li>
+        <li><%= link_to 'Typy posiłków', dish_types_path %></li>
+        <li>'Jadłospisy'</li>
+      </ul>
+    </nav>
 </header>
   <section>
 

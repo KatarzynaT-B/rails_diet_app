@@ -1,54 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
+<h1><%= @profile.name.capitalize %></h1>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @profile.sex %>
-</p>
+<table>
+  <tr>
+    <td>Płeć:</td>
+    <td><%= profile_sex_description(@profile) %></td>
+  </tr>
+  <tr>
+    <td>Wiek:</td>
+    <td><%= "#{@profile.age} lat" %></td>
+  </tr>
+  <tr>
+    <td>Waga:</td>
+    <td><%= "#{@profile.weight} kg" %></td>
+  </tr>
+  <tr>
+    <td>Wzrost:</td>
+    <td><%= "#{@profile.height} cm" %></td>
+  </tr>
+  <tr>
+    <td>Poziom aktywności:</td>
+    <td><%= @profile.activity_level %></td>
+  </tr>
+  </tr>
+  <tr>
+    <td>Dzienne zapotrzebowanie kaloryczne:</td>
+    <td><%= "#{@profile.calories_need} g" %></td>
+  </tr>
+  </tr>
+  <tr>
+    <td>Białko - dzienne zapotrzebowanie:</td>
+    <td><%= "#{@profile.protein_need} g (#{@protein_kcal} kcal)" %></td>
+  </tr>
+  </tr>
+  <tr>
+    <td>Tłuszcze - dzienne zapotrzebowanie:</td>
+    <td><%= "#{@profile.fat_need} g (#{@fat_kcal} kcal)" %></td>
+  </tr>
+  </tr>
+  <tr>
+    <td>Węglowodany - dzienne zapotrzebowanie:</td>
+    <td><%= "#{@profile.carbs_need} g (#{@carbs_kcal} kcal)" %></td>
+  </tr>
+</table>
 
-<p>
-  <strong>Age:</strong>
-  <%= @profile.age %>
-</p>
+<%= link_to 'Zmień', edit_profile_path(@profile) %> |
+<%= link_to 'Wróć do listy profili', profiles_path %>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @profile.weight %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @profile.height %>
-</p>
-
-<p>
-  <strong>Activity level:</strong>
-  <%= @profile.activity_level %>
-</p>
-
-<p>
-  <strong>Calories need:</strong>
-  <%= @profile.calories_need %>
-</p>
-
-<p>
-  <strong>Protein need:</strong>
-  <%= @profile.protein_need %>
-</p>
-
-<p>
-  <strong>Fat need:</strong>
-  <%= @profile.fat_need %>
-</p>
-
-<p>
-  <strong>Carbs need:</strong>
-  <%= @profile.carbs_need %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= render 'activity_levels' %>

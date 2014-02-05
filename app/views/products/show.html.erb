@@ -1,34 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<h1><%= @product.name.capitalize %></h1>
 
-<p>
-  <strong>Calories:</strong>
-  <%= @product.calories %>
-</p>
+<table>
+  <caption>Wartości w 100 g</caption>
+  <tr>
+    <td>Kalorie:</td>
+    <td><%= "#{@product.calories} kcal" %></td>
+  </tr>
+  <tr>
+    <td>Białko:</td>
+    <td><%= "#{@product.protein} g (#{@protein_kcal} kcal)" %></td>
+  </tr>
+  <tr>
+    <td>Tłuszcze:</td>
+    <td><%= "#{@product.fat} g (#{@fat_kcal} kcal)" %></td>
+  </tr>
+  <tr>
+    <td>Węglowodany:</td>
+    <td><%= "#{@product.carbs} g (#{@carbs_kcal} kcal)" %></td>
+  </tr>
+</table>
 
-<p>
-  <strong>Protein:</strong>
-  <%= @product.protein %>
-</p>
-
-<p>
-  <strong>Fat:</strong>
-  <%= @product.fat %>
-</p>
-
-<p>
-  <strong>Carbs:</strong>
-  <%= @product.carbs %>
-</p>
-
-<p>
-  <strong>Ingredient:</strong>
-  <%= @product.ingredient_id %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Zmień', edit_product_path(@product) %> |
+<%= link_to 'Wróć do listy produktów', products_path %>

@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title, 'Tytuł' %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :author %><br>
+    <%= f.label :author, 'Autor' %><br>
     <%= f.text_field :author %>
   </div>
   <div class="field">
-    <%= f.label :source %><br>
+    <%= f.label :source, 'Źródło' %><br>
     <%= f.text_field :source %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
+    <%= f.label :content, 'Treść' %><br>
     <%= f.text_area :content %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Zapisz artykuł" %>
   </div>
 <% end %>

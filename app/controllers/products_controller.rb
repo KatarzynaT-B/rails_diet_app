@@ -5,10 +5,16 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @product_values = {}
+    @products.each do |product|
+      protein_kcal, fat_kcal, carbs_kcal = grams_to_kcal(product)
+      @product_values[product] = { protein: protein_kcal, fat: fat_kcal, carbs: carbs_kcal }
+    end
     redirect_to new_product_path if @products.empty?
   end
 
   def show
+    @protein_kcal, @fat_kcal, @carbs_kcal = grams_to_kcal(@product)
   end
 
   def new
@@ -24,7 +30,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
         count_calories(@product)
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to @product, notice: 'Produkt dodany do listy' }
         format.json { render action: 'show', status: :created, location: @product }
       else
         format.html { render action: 'new' }
@@ -37,7 +43,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.update(product_params)
         count_calories(@product)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to @product, notice: 'Produkt został zaktualizowany' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -61,6 +67,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:name, :calories, :protein, :fat, :carbs, :ingredient_id)
+      params.require(:product).permit(:name, :calories, :protein, :fat, :carbs)
     end
 end

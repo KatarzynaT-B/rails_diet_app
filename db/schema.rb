@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140126121659) do
+ActiveRecord::Schema.define(version: 20140205165420) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
     t.string   "author"
     t.string   "source"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dish_types", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,7 +35,6 @@ ActiveRecord::Schema.define(version: 20140126121659) do
     t.float    "dish_fat"
     t.float    "dish_carbs"
     t.float    "dish_calories"
-    t.integer  "ingredient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,13 +47,31 @@ ActiveRecord::Schema.define(version: 20140126121659) do
     t.datetime "updated_at"
   end
 
+  create_table "meals", force: true do |t|
+    t.integer  "dish_type_id"
+    t.integer  "dish_id"
+    t.integer  "menu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "menus", force: true do |t|
+    t.string   "name"
+    t.integer  "meals_no"
+    t.integer  "calories"
+    t.float    "protein"
+    t.float    "fat"
+    t.float    "carbs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "products", force: true do |t|
     t.string   "name"
     t.integer  "calories"
     t.float    "protein"
     t.float    "fat"
     t.float    "carbs"
-    t.integer  "ingredient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
