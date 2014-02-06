@@ -1,7 +1,9 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
-  before_action :set_dish_types, except: [:index, :destroy]
-  before_action :set_dishes, except: [:destroy, :index]
+  before_action :set_dish_types, except: :destroy
+  before_action :set_dishes, except: :destroy
+
+  include MenusHelper
 
   def index
     @menus = Menu.all
@@ -9,13 +11,13 @@ class MenusController < ApplicationController
   end
 
   def show
-    #@meals = @menu.meals
     @meals_collection = collect_meal_information(@menu)
     @menu_values = calculate_menu_values(@meals_collection)
   end
 
   def new
     @menu = Menu.new
+    @menu.meals.build
   end
 
   def edit
@@ -23,7 +25,6 @@ class MenusController < ApplicationController
 
   def create
     @menu = Menu.new(menu_params)
-
     respond_to do |format|
       if @menu.save
         format.html { redirect_to @menu, notice: 'Jadłospis dodany do bazy' }
@@ -65,11 +66,12 @@ class MenusController < ApplicationController
     @dish_types = DishType.all
   end
 
-  def menu_params
-    params.require(:menu).permit(:name, :meals_no, :calories, :protein, :fat, :carbs)
-  end
-
   def set_dishes
     @dishes = Dish.all
+  end
+
+  def menu_params
+    params.require(:menu).permit(:name, :meals_no, :calories, :protein, :fat, :carbs,
+                                 meals_attributes: [:dish_type_id, :dish_id, :menu_id])
   end
 end

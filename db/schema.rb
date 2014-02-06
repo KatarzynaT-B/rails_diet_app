@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205165420) do
+ActiveRecord::Schema.define(version: 20140205204301) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20140205165420) do
     t.float    "dish_protein"
     t.float    "dish_fat"
     t.float    "dish_carbs"
-    t.float    "dish_calories"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "dish_calories"
   end
 
   create_table "ingredients", force: true do |t|

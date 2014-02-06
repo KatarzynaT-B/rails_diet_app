@@ -17,21 +17,21 @@
   </div>
 
   <h3>Dodaj posiłek</h3>
-  <%= f.fields_for :meal do |meal_builder| %>
-    <div class="field">
-      <%= meal_builder.label :dish_type_id, 'Wybierz typ posiłku' %>
-      <%= meal_builder.select :dish_type_id, @dish_types.each.collect {|dish_type| [dish_type.name, dish_type.id]} %>
-    </div>
+    <%= f.fields_for :meals do |meal_builder| %>
+        <div class="field">
+          <%= meal_builder.label :dish_type_id, 'Wybierz typ posiłku' %>
+          <%= meal_builder.select :dish_type_id, @dish_types.each.collect {|dish_type| [dish_type.name, dish_type.id]} %>
+        </div>
 
-    <div class="field">
-      <%= meal_builder.label :dish_id, 'Wybierz danie' %>
-      <%= meal_builder.select :dish_id, @dishes.each.collect {|dish| [dish.dish_name, dish.id]} %>
-      <% if meal_builder.object.persisted? %>
-        <%= meal_builder.check_box :_destroy %>
-        <%= meal_builder.label :_destroy, 'Usuń danie' %>
-      <% end %>
-    </div>
-  <% end %>
+        <div class="field">
+          <%= meal_builder.label :dish_id, 'Wybierz danie' %>
+          <%= meal_builder.select :dish_id, @dishes.each.collect {|dish| [dish.dish_name, dish.id]} %>
+          <% if meal_builder.object.persisted? %>
+              <%= meal_builder.check_box :_destroy %>
+              <%= meal_builder.label :_destroy, 'Usuń danie' %>
+          <% end %>
+        </div>
+    <% end %>
 
   <div class="actions">
     <%= f.submit "Zapisz jadłospis" %>

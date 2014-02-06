@@ -9,6 +9,7 @@ class DishesController < ApplicationController
 
   def show
     @ingredients_collection = calculate_ingredients_values(@dish)
+    calculate_dish_values(@ingredients_collection, @dish)
   end
 
   def new

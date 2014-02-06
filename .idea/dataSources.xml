@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Rails diet_app: development" uuid="1efb43bd-8321-4dad-998f-3d0c716bb66c">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\RUBY_RAILS\rails_diet_app\db\development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>
