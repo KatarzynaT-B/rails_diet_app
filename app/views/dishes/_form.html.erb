@@ -1,43 +1,46 @@
 <%= form_for(@dish) do |f| %>
-  <% if @dish.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
+    <% if @dish.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
 
-      <ul>
-      <% @dish.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :dish_name, 'Nazwa:' %><br>
-    <%= f.text_field :dish_name %>
-  </div>
-
-  <h3>Składniki</h3>
-  <%= f.fields_for :ingredients do |ingredient_builder| %>
-    <div class="field">
-      <%= ingredient_builder.label :product_id, 'Wybierz składnik' %>
-      <%= ingredient_builder.select :product_id, @products.each.collect {|product| [product.name, product.id]} %>
-    </div>
+          <ul>
+            <% @dish.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
     <div class="field">
-      <%= ingredient_builder.label :quantity_per_dish, 'Podaj potrzebną ilość składnika' %>
-      <%= ingredient_builder.number_field :quantity_per_dish %>
-      <% if ingredient_builder.object.persisted? %>
-        <%= ingredient_builder.check_box :_destroy %>
-        <%= ingredient_builder.label :_destroy, 'Usuń składnik' %>
-      <% end %>
+      <%= f.label :dish_name, 'Nazwa:' %><br>
+      <%= f.text_field :dish_name %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :steps, 'Wykonanie:' %><br>
-    <%= f.text_area :steps %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Zapisz danie" %>
-  </div>
+    <h3>Składniki</h3>
+
+    <%= f.fields_for :ingredients do |ingredient_builder| %>
+        <div class="field">
+          <%= ingredient_builder.label :product_id, 'Wybierz składnik' %>
+          <%= ingredient_builder.select :product_id, @products.each.collect {|product| [product.name, product.id]} %>
+        </div>
+
+        <div class="field">
+          <%= ingredient_builder.label :quantity_per_dish, 'Podaj potrzebną ilość składnika' %>
+          <%= ingredient_builder.number_field :quantity_per_dish %>
+          <% if ingredient_builder.object.persisted? %>
+              <%= ingredient_builder.check_box :_destroy %>
+              <%= ingredient_builder.label :_destroy, 'Usuń składnik' %>
+          <% end %>
+        </div>
+
+    <% end %>
+
+    <div class="field">
+      <%= f.label :steps, 'Wykonanie:' %><br>
+      <%= f.text_area :steps %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Zapisz danie" %>
+    </div>
+
 <% end %>

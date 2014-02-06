@@ -14,7 +14,7 @@ class DishesController < ApplicationController
 
   def new
     @dish = Dish.new
-    @dish.ingredients.build
+    5.times {@dish.ingredients.build}
   end
 
   def edit
@@ -69,7 +69,7 @@ class DishesController < ApplicationController
 
     def dish_params
       params.require(:dish).permit(:dish_name, :steps, :dish_protein, :dish_fat, :dish_carbs, :dish_calories,
-                                    ingredients_attributes: [:quantity_per_dish, :product_id, :dish_id])
+                                    ingredients_attributes: [:id, :quantity_per_dish, :product_id, :dish_id])
     end
 
 end

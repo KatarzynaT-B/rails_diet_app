@@ -11,36 +11,38 @@
     <th>Węglowodany</th>
   </tr>
   <tr>
-  <th><%= "#{@menu_values[:calories]} kcal" %></th>
-  <th><%= "#{@menu_values[:protein]} g" %></th>
-  <th><%= "#{@menu_values[:fat]} g" %></th>
-  <th><%= "#{@menu_values[:carbs]} g" %></th>
+  <th><%= "#{@menu.calories} kcal" %></th>
+  <th><%= "#{@menu.protein} g" %></th>
+  <th><%= "#{@menu.fat} g" %></th>
+  <th><%= "#{@menu.carbs} g" %></th>
 </table>
 
 <h2>Posiłki:</h2>
 
-<% @meals_collection.each_value do |meal| %>
+<% @menu.meals.each do |meal| %>
     <fieldset>
 
-      <legend><%= "#{meal[:type].titleize} - #{meal[:name].titleize}" %></legend>
+      <legend>
+        <%= "#{@dish_types.find(meal.dish_type_id).name} - #{@dishes.find(meal.dish_id).dish_name.titleize}" %>
+      </legend>
 
       <table>
         <tr>
-          <th>Składnik</th>
+          <th>Składniki</th>
           <th>Ilość</th>
           <th>Kalorie</th>
         </tr>
-        <% meal[:ingredients].each do | ingredient_name, ingredient_values | %>
+        <% @dishes.find(meal.dish_id).ingredients.each do | ingredient | %>
             <tr>
-              <td><%= ingredient_name %></td>
-              <td><%= "#{ingredient_values[:amount]} g" %></td>
-              <td><%= "#{ingredient_values[:calories]} kcal" %></td>
+              <td><%= @products.find(ingredient.product_id).name %></td>
+              <td><%= "#{ingredient.quantity_per_dish} g" %></td>
+              <td><%= "#{@products.find(ingredient.product_id).calories} kcal" %></td>
             </tr>
         <% end %>
       </table>
 
       <h4>Wykonanie:</h4>
-      <p><%= meal[:steps] %></p>
+      <p><%= @dishes.find(meal.dish_id).steps %></p>
 
       <table>
         <tr>
@@ -52,10 +54,10 @@
         </tr>
         <tr>
           <td></td>
-          <td><%= "#{meal[:values][:calories]} kcal" %></td>
-          <td><%= "#{meal[:values][:protein]} g" %></td>
-          <td><%= "#{meal[:values][:fat]} g" %></td>
-          <td><%= "#{meal[:values][:carbs]} g" %></td>
+          <td><%= "#{@dishes.find(meal.dish_id).dish_calories} kcal" %></td>
+          <td><%= "#{@dishes.find(meal.dish_id).dish_protein} g" %></td>
+          <td><%= "#{@dishes.find(meal.dish_id).dish_fat} g" %></td>
+          <td><%= "#{@dishes.find(meal.dish_id).dish_carbs} g" %></td>
         </tr>
       </table>
     </fieldset>

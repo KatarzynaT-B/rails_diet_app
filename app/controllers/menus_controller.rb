@@ -11,13 +11,12 @@ class MenusController < ApplicationController
   end
 
   def show
-    @meals_collection = collect_meal_information(@menu)
-    @menu_values = calculate_menu_values(@meals_collection)
+    @products = Product.all
   end
 
   def new
     @menu = Menu.new
-    @menu.meals.build
+    5.times {@menu.meals.build}
   end
 
   def edit
@@ -27,6 +26,7 @@ class MenusController < ApplicationController
     @menu = Menu.new(menu_params)
     respond_to do |format|
       if @menu.save
+        update_menu_with_values(@menu, @dishes)
         format.html { redirect_to @menu, notice: 'Jadłospis dodany do bazy' }
         format.json { render action: 'show', status: :created, location: @menu }
       else
@@ -39,6 +39,7 @@ class MenusController < ApplicationController
   def update
     respond_to do |format|
       if @menu.update(menu_params)
+        update_menu_with_values(@menu, @dishes)
         format.html { redirect_to @menu, notice: 'Jadłospis został zaktualizowany' }
         format.json { head :no_content }
       else
@@ -72,6 +73,6 @@ class MenusController < ApplicationController
 
   def menu_params
     params.require(:menu).permit(:name, :meals_no, :calories, :protein, :fat, :carbs,
-                                 meals_attributes: [:dish_type_id, :dish_id, :menu_id])
+                                 meals_attributes: [:id, :dish_type_id, :dish_id, :menu_id])
   end
 end
