@@ -14,7 +14,7 @@ class DishesController < ApplicationController
 
   def new
     @dish = Dish.new
-    5.times {@dish.ingredients.build}
+    @dish.ingredients.build
   end
 
   def edit
