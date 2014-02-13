@@ -24,37 +24,26 @@ class MenusController < ApplicationController
 
   def create
     @menu = Menu.new(menu_params)
-    respond_to do |format|
-      if @menu.save
-        update_menu_with_values(@menu, @dishes)
-        format.html { redirect_to @menu, notice: 'Jadłospis dodany do bazy' }
-        format.json { render action: 'show', status: :created, location: @menu }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @menu.errors, status: :unprocessable_entity }
-      end
+    if @menu.save
+      update_menu_with_values(@menu, @dishes)
+      redirect_to @menu, notice: 'Jadłospis dodany do bazy'
+    else
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @menu.update(menu_params)
-        update_menu_with_values(@menu, @dishes)
-        format.html { redirect_to @menu, notice: 'Jadłospis został zaktualizowany' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @menu.errors, status: :unprocessable_entity }
-      end
+    if @menu.update(menu_params)
+      update_menu_with_values(@menu, @dishes)
+      redirect_to @menu, notice: 'Jadłospis został zaktualizowany'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @menu.destroy
-    respond_to do |format|
-      format.html { redirect_to menus_url }
-      format.json { head :no_content }
-    end
+    redirect_to menus_url
   end
 
   private

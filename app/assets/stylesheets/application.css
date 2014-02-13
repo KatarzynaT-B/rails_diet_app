@@ -65,3 +65,7 @@ nav ul li a:hover {
     background: #CC6371;
 }
 
+section {
+    float: left;
+    font-family: Arial;
+}

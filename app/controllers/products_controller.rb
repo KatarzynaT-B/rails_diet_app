@@ -26,47 +26,35 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
-    respond_to do |format|
-      if @product.save
-        count_calories(@product)
-        format.html { redirect_to @product, notice: 'Produkt dodany do listy' }
-        format.json { render action: 'show', status: :created, location: @product }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.save
+      count_calories(@product)
+      redirect_to @product, notice: 'Produkt dodany do listy'
+    else
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        count_calories(@product)
-        format.html { redirect_to @product, notice: 'Produkt został zaktualizowany' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.update(product_params)
+      count_calories(@product)
+      redirect_to @product, notice: 'Produkt został zaktualizowany'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @product.destroy
-    respond_to do |format|
-      format.html { redirect_to products_url }
-      format.json { head :no_content }
-    end
+    redirect_to products_url
   end
 
   private
 
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
-    def product_params
-      params.require(:product).permit(:name, :calories, :protein, :fat, :carbs)
-    end
+  def product_params
+    params.require(:product).permit(:name, :calories, :protein, :fat, :carbs)
+  end
 end

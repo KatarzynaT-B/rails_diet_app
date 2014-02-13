@@ -13,9 +13,9 @@ module ApplicationHelper
       carbs = model_object.carbs_need.to_f
     end
 
-    protein_kcal = (4 * protein).round(2)
-    fat_kcal = (9 * fat).round(2)
-    carbs_kcal = (4 * carbs).round(2)
+    protein_kcal = (4 * protein).round
+    fat_kcal = (9 * fat).round
+    carbs_kcal = (4 * carbs).round
 
     [protein_kcal, fat_kcal, carbs_kcal]
   end
@@ -75,5 +75,6 @@ module ApplicationHelper
     dish.update(dish_carbs: dish_carbs.round(2))
     dish.update(dish_calories: dish_calories)
   end
+
 end
 

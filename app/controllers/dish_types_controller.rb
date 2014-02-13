@@ -15,36 +15,24 @@ class DishTypesController < ApplicationController
 
   def create
     @dish_type = DishType.new(dish_type_params)
-
-    respond_to do |format|
-      if @dish_type.save
-        format.html { redirect_to @dish_type, notice: 'Artykuł dodany do bazy' }
-        format.json { render action: 'show', status: :created, location: @dish_type }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @dish_type.errors, status: :unprocessable_entity }
-      end
+    if @dish_type.save
+      redirect_to @dish_type, notice: 'Artykuł dodany do bazy'
+    else
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @dish_type.update(dish_type_params)
-        format.html { redirect_to @dish_type, notice: 'Artykuł został zaktualizowany' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @dish_type.errors, status: :unprocessable_entity }
-      end
+    if @dish_type.update(dish_type_params)
+      redirect_to @dish_type, notice: 'Artykuł został zaktualizowany'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @dish_type.destroy
-    respond_to do |format|
-      format.html { redirect_to dish_types_url }
-      format.json { head :no_content }
-    end
+    redirect_to dish_types_url
   end
 
   private

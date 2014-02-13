@@ -22,54 +22,44 @@ class DishesController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
-    respond_to do |format|
-      if @dish.save
-        @ingredients_collection = calculate_ingredients_values(@dish)
-        calculate_dish_values(@ingredients_collection, @dish)
-        format.html { redirect_to @dish, notice: 'Dish was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @dish }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @dish.errors, status: :unprocessable_entity }
-      end
+    if @dish.save
+      @ingredients_collection = calculate_ingredients_values(@dish)
+      calculate_dish_values(@ingredients_collection, @dish)
+      redirect_to @dish, notice: 'Dish was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @dish.update(dish_params)
-        @ingredients_collection = calculate_ingredients_values(@dish)
-        calculate_dish_values(@ingredients_collection, @dish)
-        format.html { redirect_to @dish, notice: 'Dish was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @dish.errors, status: :unprocessable_entity }
-      end
+    if @dish.update(dish_params)
+      @dish.ingredients.update(params[:ingredients_attributes])
+      @ingredients_collection = calculate_ingredients_values(@dish)
+      calculate_dish_values(@ingredients_collection, @dish)
+      redirect_to @dish, notice: 'Dish was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @dish.destroy
-    respond_to do |format|
-      format.html { redirect_to dishes_url }
-      format.json { head :no_content }
-    end
+    redirect_to dishes_url
   end
 
   private
 
-    def set_dish
-      @dish = Dish.find(params[:id])
-    end
+  def set_dish
+    @dish = Dish.find(params[:id])
+  end
 
-    def set_products
-      @products = Product.all
-    end
+  def set_products
+    @products = Product.all
+  end
 
-    def dish_params
-      params.require(:dish).permit(:dish_name, :steps, :dish_protein, :dish_fat, :dish_carbs, :dish_calories,
-                                    ingredients_attributes: [:id, :quantity_per_dish, :product_id, :dish_id])
-    end
+  def dish_params
+    params.require(:dish).permit(:dish_name, :steps, :dish_protein, :dish_fat, :dish_carbs, :dish_calories,
+                                 ingredients_attributes: [:id, :quantity_per_dish, :product_id, :dish_id])
+  end
 
 end

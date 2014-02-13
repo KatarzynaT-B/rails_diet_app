@@ -18,41 +18,21 @@
 
     <h3>Składniki</h3>
 
-    <div id="ingredient_form_fields">
+    <div class="ingredient_form_fields">
       <%= f.fields_for :ingredients do |ingredient_builder| %>
-          <div class="field">
-            <%= ingredient_builder.label :product_id, 'Wybierz składnik' %>
-            <%= ingredient_builder.select :product_id, @products.each.collect {|product| [product.name, product.id]} %>
-          </div>
-
-          <div class="field">
-            <%= ingredient_builder.label :quantity_per_dish, 'Podaj potrzebną ilość składnika' %>
-            <%= ingredient_builder.number_field :quantity_per_dish %>
-            <% if ingredient_builder.object.persisted? %>
-                <%= ingredient_builder.check_box :_destroy %>
-                <%= ingredient_builder.label :_destroy, 'Usuń składnik' %>
-            <% end %>
-          </div>
+          <%= render 'ingredients_form', f: ingredient_builder %>
       <% end %>
     </div>
 
-    <p><%= link_to 'Dodaj kolejny składnik', '#', id: 'add_new_ingredient_link', remote: true %></p>
+    <%= link_to  "Dodaj składnik", '#', class: 'add_fields' %>
 
     <div class="field">
       <%= f.label :steps, 'Wykonanie:' %><br>
       <%= f.text_area :steps %>
     </div>
+
     <div class="actions">
       <%= f.submit "Zapisz danie" %>
     </div>
-
-    <script>
-      var $new_ingredient_fields = $('#ingredient_form_fields').html();
-
-      $('#add_new_ingredient_link').click(function() {
-          $('#ingredient_form_fields').append($new_ingredient_fields);
-          return false;
-      });
-    </script>
 
 <% end %>

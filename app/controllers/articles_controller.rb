@@ -18,46 +18,34 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to @article, notice: 'Artykuł dodany do bazy' }
-        format.json { render action: 'show', status: :created, location: @article }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
+    if @article.save
+      redirect_to @article, notice: 'Artykuł dodany do bazy'
+    else
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Artykuł został zaktualizowany' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
+    if @article.update(article_params)
+      redirect_to @article, notice: 'Artykuł został zaktualizowany'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @article.destroy
-    respond_to do |format|
-      format.html { redirect_to articles_url }
-      format.json { head :no_content }
-    end
+    redirect_to articles_url
   end
 
   private
 
-    def set_article
-      @article = Article.find(params[:id])
-    end
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
 
-    def article_params
-      params.require(:article).permit(:title, :author, :source, :content)
-    end
+  def article_params
+    params.require(:article).permit(:title, :author, :source, :content)
+  end
 end
