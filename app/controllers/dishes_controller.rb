@@ -18,11 +18,20 @@ class DishesController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
-    @dish = Dish.new(dish_params)
+    @dish = Dish.create(dish_params)
+    #@dish.ingredients.build
+
     if @dish.save
+      params[:dish][:ingredients_attributes].each_value do |ingredient_hash|
+        next if ingredient_hash[:quantity_per_dish].to_f <= 0
+        @dish.ingredients.create(id: ingredient_hash['id'],
+                                product_id: ingredient_hash['product_id'],
+                                quantity_per_dish: ingredient_hash['quantity_per_dish'])
+      end
       @ingredients_collection = calculate_ingredients_values(@dish)
       calculate_dish_values(@ingredients_collection, @dish)
       redirect_to @dish, notice: 'Dish was successfully created.'
@@ -32,8 +41,18 @@ class DishesController < ApplicationController
   end
 
   def update
+    params[:dish][:ingredients_attributes].each_value do |ingredient_hash|
+      next if ingredient_hash[:quantity_per_dish].to_f <= 0
+      if Ingredient.exists?(id: ingredient_hash['id'])
+        Ingredient.find(ingredient_hash['id']).update(product_id: ingredient_hash['product_id'], quantity_per_dish: ingredient_hash['quantity_per_dish'])
+      else
+        @dish.ingredients.create(id: ingredient_hash['id'],
+                               product_id: ingredient_hash['product_id'],
+                               quantity_per_dish: ingredient_hash['quantity_per_dish'])
+      end
+    end
+
     if @dish.update(dish_params)
-      @dish.ingredients.update(params[:ingredients_attributes])
       @ingredients_collection = calculate_ingredients_values(@dish)
       calculate_dish_values(@ingredients_collection, @dish)
       redirect_to @dish, notice: 'Dish was successfully updated.'

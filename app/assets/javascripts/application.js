@@ -28,15 +28,21 @@
 //    });
 //}
 
-$('form').on('click', '.add_fields', function(event) {
-    var ingredientFields = $('.ingredient_fields');
-    var currentDishIngredients = ingredientFields.last();
-    var ingredientTemplate = '<div class="ingredient_fields">'+ currentDishIngredients.html() + '</div>';
-    var ingredientNumber = ingredientFields.length;
-    var uniqueId = new Date().getTime();
-    ingredientTemplate = ingredientTemplate.replace(/_\d+_/g, '_' + ingredientNumber + '_').replace(/\[\d+\]/g, '[' + ingredientNumber + ']');
-    var hiddenField = "<input id=\"dish_ingredients_attributes_" + ingredientNumber + "_id\" type=\"hidden\" value=\"" + uniqueId + "\" name=\"dish[ingredients_attributes][" + ingredientNumber + "][id]\">";
-    $('.ingredient_form_fields').append(ingredientTemplate);
-    $('.ingredient_form_fields').append(hiddenField);
-    event.preventDefault();
+$(document).ready(function() {
+    $('form').on('click', '.add_fields', function(event) {
+        var ingredientFields = $('.ingredient_fields');
+        var currentDishIngredients = ingredientFields.last();
+        var ingredientTemplate = '<div class="ingredient_fields">'+ currentDishIngredients.html() + '</div>';
+        var ingredientNumber = ingredientFields.length;
+        ingredientTemplate = ingredientTemplate.replace(/_\d+_/g, '_' + ingredientNumber + '_').replace(/\[\d+\]/g, '[' + ingredientNumber + ']');
+        $('.ingredient_form_fields').append(ingredientTemplate);
+        if ($('form').hasClass('edit_dish')) {
+            var uniqueId = new Date().getTime();
+            var hiddenField = "<input id=\"dish_ingredients_attributes_" + ingredientNumber + "_id\" type=\"hidden\" value=\"" + uniqueId + "\" name=\"dish[ingredients_attributes][" + ingredientNumber + "][id]\">";
+            $('.ingredient_form_fields').append(hiddenField);
+        }
+        event.preventDefault();
+    });
 });
+
+
