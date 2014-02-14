@@ -15,21 +15,8 @@
 //= require turbolinks
 //= require_tree .
 //
-//function remove_fields(link) {
-//    $(link).previous("input[type=hidden]").value = "1";
-//    $(link).closest('.ingredient_fields').hide();
-//}
-
-//function add_fields(link, association, content) {
-//    var new_id = new Date().getTime();
-//    var regexp = new RegExp("new_" + association, "g")
-//    $(link).up().insert({
-//        before: content.replace(regexp, new_id)
-//    });
-//}
-
 $(document).ready(function() {
-    $('form').on('click', '.add_fields', function(event) {
+    $('form').on('click', '.add_ingredient_fields', function(event) {
         var ingredientFields = $('.ingredient_fields');
         var currentDishIngredients = ingredientFields.last();
         var ingredientTemplate = '<div class="ingredient_fields">'+ currentDishIngredients.html() + '</div>';
@@ -41,6 +28,14 @@ $(document).ready(function() {
             var hiddenField = "<input id=\"dish_ingredients_attributes_" + ingredientNumber + "_id\" type=\"hidden\" value=\"" + uniqueId + "\" name=\"dish[ingredients_attributes][" + ingredientNumber + "][id]\">";
             $('.ingredient_form_fields').append(hiddenField);
         }
+        event.preventDefault();
+    });
+
+    $('.ingredient_fields').on('click', '.remove_ingredient_fields', function(event) {
+        var currentIngredientFields = $(this).closest('.ingredient_fields');
+        currentIngredientFields.find('input[type=number]').val(0);
+        //currentIngredientFields.next(':hidden').hide();
+        currentIngredientFields.hide();
         event.preventDefault();
     });
 });

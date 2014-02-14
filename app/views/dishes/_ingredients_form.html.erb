@@ -8,4 +8,9 @@
     <%= f.label :quantity_per_dish, 'Podaj potrzebną ilość składnika' %>
     <%= f.number_field :quantity_per_dish %>
   </div>
+
+  <% if f.object.persisted? %>
+    <%= link_to  "Usuń składnik", '#', class: 'remove_ingredient_fields' %>
+  <% end %>
+
 </div>
