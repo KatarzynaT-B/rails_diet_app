@@ -34,7 +34,6 @@ $(document).ready(function() {
     $('.ingredient_fields').on('click', '.remove_ingredient_fields', function(event) {
         var currentIngredientFields = $(this).closest('.ingredient_fields');
         currentIngredientFields.find('input[type=number]').val(0);
-        //currentIngredientFields.next(':hidden').hide();
         currentIngredientFields.hide();
         event.preventDefault();
     });
