@@ -74,6 +74,10 @@ section {
     border-color: red;
 }
 
-.invalid label{
+.invalid label {
     color: red;
+}
+
+.invalid select {
+    border: 2px solid red;
 }

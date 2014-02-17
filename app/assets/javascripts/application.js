@@ -53,13 +53,25 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
-    $('form[class$=dish]').submit(function(submitEvent) {
+    $('form[class$=dish]').submit(function(event) {
         $(this).find('input.jquery_required').each(function() {
             if ($(this).val() == '') {
-                submitEvent.preventDefault();
+                event.preventDefault();
                 $(this).parent().addClass('invalid');
             } else {
                 $(this).parent().removeClass('invalid');
+            }
+        });
+        var names = [];
+        $(this).find('option').not(':hidden').filter(':selected').each(function() {
+            var product = $(this).text();
+            if ($.inArray(product, names) == -1 ) {
+                names.push(product);
+                $(this).parent('select.jquery_required').removeClass('invalid');
+            } else {
+                $(this).parent('select.jquery_required').addClass('invalid');
+                alert("Składniki muszą być różne!!!");
+                event.preventDefault();
             }
         });
     });
