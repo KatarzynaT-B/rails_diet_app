@@ -16,7 +16,7 @@
 //= require_tree .
 //
 $(document).ready(function() {
-    if ($('.ingredient_fields').length == 1) {
+    if ($('.ingredient_fields').not(':hidden').length == 1) {
         $('.remove_ingredient_fields').hide();
     }
 
@@ -42,16 +42,12 @@ $(document).ready(function() {
     });
 
     $('.ingredient_form_fields').on('click', '.remove_ingredient_fields', function(event) {
-        var currentIngredientFields = $(this).parent('.ingredient_fields');
-        currentIngredientFields
+        $(this).parent('.ingredient_fields')
             .find('input[type=number]')
                 .val(0)
                 .end()
-            .next('input[type=hidden]')
-                .remove()
-                .end()
-            .remove();
-        if ($('.ingredient_fields').length == 1) {
+            .hide();
+        if ($('.ingredient_fields').not(':hidden').length == 1) {
             $('.remove_ingredient_fields').hide();
         }
         event.preventDefault();
