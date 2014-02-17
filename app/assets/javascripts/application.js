@@ -67,9 +67,9 @@ $(document).ready(function() {
             var product = $(this).text();
             if ($.inArray(product, names) == -1 ) {
                 names.push(product);
-                $(this).parent('select.jquery_required').removeClass('invalid');
+                $(this).closest('div.jquery_no_repeat').removeClass('invalid');
             } else {
-                $(this).parent('select.jquery_required').addClass('invalid');
+                $(this).closest('div.jquery_no_repeat').addClass('invalid');
                 alert("Składniki muszą być różne!!!");
                 event.preventDefault();
             }

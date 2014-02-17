@@ -1,7 +1,7 @@
 <div class="ingredient_fields">
-  <div class="field">
+  <div class="field jquery_no_repeat">
     <%= f.label :product_id, 'Wybierz składnik'%>
-    <%= f.select :product_id, @products.each.collect {|product| [product.name, product.id]}, class: 'jquery_required' %>
+    <%= f.select :product_id, @products.each.collect {|product| [product.name, product.id]} %>
   </div>
 
   <div class="field">
