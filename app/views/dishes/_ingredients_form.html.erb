@@ -1,16 +1,13 @@
 <div class="ingredient_fields">
   <div class="field jquery_no_repeat">
-    <%= f.label :product_id, 'Wybierz składnik'%>
+    <!--<%= f.label :product_id, 'Składnik:'%>-->
     <%= f.select :product_id, @products.each.collect {|product| [product.name, product.id]} %>
   </div>
 
   <div class="field">
-    <%= f.label :quantity_per_dish, 'Podaj potrzebną ilość składnika' %>
+    <%= f.label :quantity_per_dish, 'Ile gram?' %>
     <%= f.number_field :quantity_per_dish, class: 'jquery_required' %>
   </div>
 
-
    <%= link_to  "Usuń składnik", '#', class: 'remove_ingredient_fields' %>
-
-
 </div>

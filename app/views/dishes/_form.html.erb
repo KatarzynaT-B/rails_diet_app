@@ -16,15 +16,17 @@
       <%= f.text_field :dish_name %>
     </div>
 
-    <h3>Składniki</h3>
+    <fieldset>
+        <legend>Wybierz składniki</legend>
 
-    <div class="ingredient_form_fields">
-      <%= f.fields_for :ingredients do |ingredient_builder| %>
-          <%= render 'ingredients_form', f: ingredient_builder %>
-      <% end %>
-    </div>
+        <div class="ingredient_form_fields">
+          <%= f.fields_for :ingredients do |ingredient_builder| %>
+              <%= render 'ingredients_form', f: ingredient_builder %>
+          <% end %>
+        </div>
 
-    <%= link_to  "Dodaj składnik", '#', class: 'add_ingredient_fields' %>
+        <%= link_to  "Dodaj składnik", '#', class: 'add_ingredient_fields' %>
+    </fieldset>
 
     <div class="field">
       <%= f.label :steps, 'Wykonanie:' %><br>
