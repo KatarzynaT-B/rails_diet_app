@@ -52,6 +52,17 @@ $(document).ready(function() {
         }
         event.preventDefault();
     });
+
+    $('form[class$=dish]').submit(function(submitEvent) {
+        $(this).find('input.jquery_required').each(function() {
+            if ($(this).val() == '') {
+                submitEvent.preventDefault();
+                $(this).parent().addClass('invalid');
+            } else {
+                $(this).parent().removeClass('invalid');
+            }
+        });
+    });
 });
 
 
