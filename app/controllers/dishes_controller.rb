@@ -23,44 +23,19 @@ class DishesController < ApplicationController
   def create
     ingredients_to_remove = []
     @dish = Dish.create(dish_params)
-
-    params[:dish][:ingredients_attributes].each_value do |ingredient_hash|
-
-      i = Ingredient.create(id: ingredient_hash['id'],
-                            product_id: ingredient_hash['product_id'],
-                            quantity_per_dish: ingredient_hash['quantity_per_dish'],
-                            dish_id: @dish.id)
-
-      if ingredient_hash['quantity_per_dish'].to_f <= 0
-        ingredients_to_remove.push(i.id)
+    @dish.ingredients.each do |ingredient|
+      if ingredient.quantity_per_dish <= 0
+        ingredients_to_remove.push ingredient.id
       end
-      #else
-        #if Ingredient.exists?(id: ingredient_hash['id'])
-        #  Ingredient.find(ingredient_hash['id']).update(product_id: ingredient_hash['product_id'], quantity_per_dish: ingredient_hash['quantity_per_dish'])
-        #else
-      #if ingredient_hash['quantity_per_dish'].to_i > 0
-      #      Ingredient.create(id: ingredient_hash['id'],
-      #                        product_id: ingredient_hash['product_id'],
-      #                        quantity_per_dish: ingredient_hash['quantity_per_dish'],
-      #                        dish_id: @dish.id)
-      #end
-      #end
+    end
+    unless ingredients_to_remove.empty?
+      ingredients_to_remove.each do |id|
+        @dish.ingredients.find(id).destroy
+      end
     end
 
+
     if @dish.save
-      #@dish.ingredients.each do |ingredient|
-      #  @dish.ingredients.find(ingredient.id).save
-      #end
-      #unless ingredients_to_remove.empty?
-      #  ingredients_to_remove.each do |id|
-      #    @dish.ingredients.find(id).destroy
-      #  end
-      #end
-      if ingredients_to_remove.size > 0
-        ingredients_to_remove.each do |id|
-          Ingredient.find(id).destroy
-        end
-      end
       @ingredients_collection = calculate_ingredients_values(@dish)
       calculate_dish_values(@ingredients_collection, @dish)
       redirect_to @dish, notice: 'Dish was successfully created.'
