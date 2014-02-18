@@ -1,3 +1,74 @@
-// Place all the styles related to the dishes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.edit_dish form, .new_dish form {
+  display: inline-block;
+}
+
+fieldset.dish {
+  display: block;
+  float: left;
+  position: relative;
+  min-width: 420px;
+  min-height: 225px;
+  margin-top: 10px;
+}
+
+.actions {
+  float: right;
+}
+
+.go_back_link {
+  display: block;
+}
+.check_details_link {
+  display: block;
+}
+
+.remove_ingredient_fields a {
+}
+
+.dish_details {
+  clear: both;
+  display: block;
+}
+
+#dish_name {
+  display: inline-block;
+  float: left;
+}
+
+#dish_name input {
+  width: 390px;
+  float: right;
+}
+#dish_name label {
+  margin-right: 5px;
+}
+
+form.edit_dish div.field, form.new_dish div.field {
+  display: inline-block;
+}
+
+fieldset > textarea {
+  width: 420px;
+  height: 200px;
+}
+
+form.edit_dish div.field input, form.new_dish div.field input {
+  width: 250px;
+}
+
+form.edit_dish div.ingredient_fields input, form.new_dish div.ingredient_fields input {
+  width: 40px;
+}
+
+.dish_fields {
+  float: left;
+}
+
+.invalid input {
+  border-color: red;
+}
+
+.invalid label {
+  color: red;
+}
+

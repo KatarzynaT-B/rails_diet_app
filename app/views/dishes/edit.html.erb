@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Wyświetl szczegóły dania', @dish %> |
-<%= link_to 'Wróć do listy dań', dishes_path %>
+<%= link_to 'Wróć do listy dań', dishes_path, class: "go_back_link" %>
+<%= link_to 'Wyświetl szczegóły dania', @dish, class: "check_details_link" %>

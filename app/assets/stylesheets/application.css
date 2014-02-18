@@ -70,11 +70,4 @@ section {
     font-family: Arial;
 }
 
-.invalid input {
-    border-color: red;
-}
-
-.invalid label {
-    color: red;
-}
 

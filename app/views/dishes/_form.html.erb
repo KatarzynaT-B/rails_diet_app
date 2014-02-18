@@ -11,26 +11,28 @@
         </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :dish_name, 'Nazwa:' %><br>
+    <div id="dish_name">
+      <%= f.label :dish_name, 'Nazwa'%>
       <%= f.text_field :dish_name %>
     </div>
 
-    <fieldset>
-        <legend>Wybierz składniki</legend>
+    <div class="dish_details">
+        <fieldset class="dish">
+            <legend>Wybierz składniki</legend>
 
-        <div class="ingredient_form_fields">
-          <%= f.fields_for :ingredients do |ingredient_builder| %>
-              <%= render 'ingredients_form', f: ingredient_builder %>
-          <% end %>
-        </div>
+            <div class="ingredient_form_fields">
+              <%= f.fields_for :ingredients do |ingredient_builder| %>
+                  <%= render 'ingredients_form', f: ingredient_builder %>
+              <% end %>
+            </div>
 
-        <%= link_to  "Dodaj składnik", '#', class: 'add_ingredient_fields' %>
-    </fieldset>
+            <%= link_to  "Dodaj składnik", '#', class: 'add_ingredient_fields' %>
+        </fieldset>
 
-    <div class="field">
-      <%= f.label :steps, 'Wykonanie:' %><br>
-      <%= f.text_area :steps %>
+        <fieldset class="dish">
+          <legend>Wykonanie:</legend>
+          <%= f.text_area :steps %>
+        </fieldset>
     </div>
 
     <div class="actions">
