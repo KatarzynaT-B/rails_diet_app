@@ -16,14 +16,14 @@ class MenusController < ApplicationController
 
   def new
     @menu = Menu.new
-    5.times {@menu.meals.build}
+    @menu.meals.build
   end
 
   def edit
   end
 
   def create
-    @menu = Menu.new(menu_params)
+    @menu = Menu.create(menu_params)
     if @menu.save
       update_menu_with_values(@menu, @dishes)
       redirect_to @menu, notice: 'Jadłospis dodany do bazy'

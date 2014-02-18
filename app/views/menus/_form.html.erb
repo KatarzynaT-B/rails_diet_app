@@ -1,39 +1,54 @@
 <%= form_for(@menu) do |f| %>
-  <% if @menu.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+    <% if @menu.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
 
-      <ul>
-      <% @menu.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name, 'Nazwa:' %><br>
-    <%= f.text_field :name %>
-  </div>
-
-  <h3>Dodaj posiłek</h3>
-    <%= f.fields_for :meals do |meal_builder| %>
-        <div class="field">
-          <%= meal_builder.label :dish_type_id, 'Wybierz typ posiłku' %>
-          <%= meal_builder.select :dish_type_id, @dish_types.each.collect {|dish_type| [dish_type.name, dish_type.id]} %>
-        </div>
-
-        <div class="field">
-          <%= meal_builder.label :dish_id, 'Wybierz danie' %>
-          <%= meal_builder.select :dish_id, @dishes.each.collect {|dish| [dish.dish_name, dish.id]} %>
-          <% if meal_builder.object.persisted? %>
-              <%= meal_builder.check_box :_destroy %>
-              <%= meal_builder.label :_destroy, 'Usuń danie' %>
-          <% end %>
+          <ul>
+            <% @menu.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
         </div>
     <% end %>
 
-  <div class="actions">
-    <%= f.submit "Zapisz jadłospis" %>
-  </div>
+    <div id="menu_name">
+      <%= f.label :name, 'Nazwa:' %>
+      <br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="menu_details">
+      <fieldset class="menu">
+        <legend>Dodaj posiłek</legend>
+          <ul class="menu_positions">
+            <%= f.fields_for :meals do |meal_builder| %>
+              <li>
+                <div class="meal_field_set">
+                  <div class="field">
+                    <%= meal_builder.label :dish_type_id, 'Wybierz typ posiłku' %>
+                    <%= meal_builder.select :dish_type_id, @dish_types.each.collect { |dish_type| [dish_type.name, dish_type.id] } %>
+                  </div>
+                  <div class="field">
+                    <%= meal_builder.label :dish_id, 'Wybierz danie' %>
+                    <%= meal_builder.select :dish_id, @dishes.each.collect { |dish| [dish.dish_name, dish.id] } %>
+                  </div>
+                  <%= link_to "Usuń posiłek", '#', class: 'remove_meal_fields' %>
+                </div>
+              </li>
+            <% end %>
+            <%= link_to  "Dodaj posiłek", '#', class: 'add_meal_fields' %>
+          </ul>
+      </fieldset>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Zapisz jadłospis" %>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+          $('.menu_positions').sortable();
+          $('.menu_poisitons').disableSelection();
+      });
+    </script>
 <% end %>

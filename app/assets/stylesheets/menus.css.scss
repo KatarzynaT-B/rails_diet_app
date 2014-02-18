@@ -1,3 +1,38 @@
-// Place all the styles related to the menu controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.edit_menu form, .new_menu form {
+  display: inline-block;
+}
+
+fieldset.menu {
+  display: block;
+  float: left;
+  position: relative;
+  min-width: 420px;
+  min-height: 225px;
+  margin-top: 10px;
+}
+
+.menu_details {
+  clear: both;
+  display: block;
+}
+
+#menu_name {
+  display: inline-block;
+  float: left;
+}
+
+#menu_name input {
+  width: 390px;
+  float: right;
+}
+#menu_name label {
+  margin-right: 5px;
+}
+
+form.edit_menu div.field, form.new_menu div.field {
+  display: inline-block;
+}
+
+.menu_positions {
+  list-style-type: none;
+}
