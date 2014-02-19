@@ -12,6 +12,7 @@ class MenusController < ApplicationController
 
   def show
     @products = Product.all
+    @meals = @menu.meals
   end
 
   def new
@@ -20,6 +21,7 @@ class MenusController < ApplicationController
   end
 
   def edit
+    #@menu.meals.order(:position)
   end
 
   def create
