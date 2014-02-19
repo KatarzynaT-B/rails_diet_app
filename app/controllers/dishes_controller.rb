@@ -28,12 +28,9 @@ class DishesController < ApplicationController
         ingredients_to_remove.push ingredient.id
       end
     end
-    unless ingredients_to_remove.empty?
-      ingredients_to_remove.each do |id|
+    ingredients_to_remove.each do |id|
         @dish.ingredients.find(id).destroy
-      end
     end
-
 
     if @dish.save
       @ingredients_collection = calculate_ingredients_values(@dish)

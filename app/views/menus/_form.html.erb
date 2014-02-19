@@ -13,7 +13,6 @@
 
     <div id="menu_name">
       <%= f.label :name, 'Nazwa:' %>
-      <br>
       <%= f.text_field :name %>
     </div>
 
@@ -36,8 +35,8 @@
                 </div>
               </li>
             <% end %>
-            <%= link_to  "Dodaj posiłek", '#', class: 'add_meal_fields' %>
           </ul>
+        <%= link_to  "Dodaj posiłek", '#', class: 'add_meal_fields' %>
       </fieldset>
     </div>
 
@@ -45,10 +44,4 @@
       <%= f.submit "Zapisz jadłospis" %>
     </div>
 
-    <script>
-      $(document).ready(function() {
-          $('.menu_positions').sortable();
-          $('.menu_poisitons').disableSelection();
-      });
-    </script>
 <% end %>

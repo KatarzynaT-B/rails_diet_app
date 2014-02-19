@@ -24,6 +24,7 @@ class MenusController < ApplicationController
 
   def create
     @menu = Menu.create(menu_params)
+
     if @menu.save
       update_menu_with_values(@menu, @dishes)
       redirect_to @menu, notice: 'Jadłospis dodany do bazy'
@@ -62,6 +63,6 @@ class MenusController < ApplicationController
 
   def menu_params
     params.require(:menu).permit(:name, :meals_no, :calories, :protein, :fat, :carbs,
-                                 meals_attributes: [:id, :dish_type_id, :dish_id, :menu_id])
+                                 meals_attributes: [:id, :dish_type_id, :dish_id, :menu_id, :position])
   end
 end
