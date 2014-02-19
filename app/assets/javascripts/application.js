@@ -28,11 +28,14 @@ $(document).ready(function() {
         var mealFieldSet = $('.meal_field_set'),
             currentMenuMeal = mealFieldSet.last(),
             mealTemplate = '<li><div class="meal_field_set">' + currentMenuMeal.html() + '</div></li>',
-            mealNumber = mealFieldSet.length;
+            mealNumber = mealFieldSet.length,
+            //id = 'meals_attributes_' + mealNumber,
+            mealPosition = mealFieldSet.not(':hidden').length + 1;
         mealTemplate = mealTemplate
             .replace(/_\d+_/g, '_' + mealNumber + '_')
             .replace(/\[\d+\]/g, '[' + mealNumber + ']');
-        $('.menu_positions').append(mealTemplate).find('input[type=number]').last().attr('value', mealNumber + 1);
+        $('.menu_positions').append(mealTemplate).find('input[type=number]').last().attr('value', mealPosition);
+        //$('.menu_positions').find('li').last().attr('id', id);
         if ($('form').hasClass('edit_menu')) {
             var uniqueId = new Date().getTime();
             var hiddenField = "<input id=\"menu_meals_attributes_" + mealNumber + "_id\" type=\"hidden\" value=\"" + uniqueId + "\" name=\"menu[meals_attributes][" + mealNumber + "][id]\">";
@@ -112,6 +115,25 @@ $(document).ready(function() {
             }
         });
     });
+//    var i = 0;
+//    $('.menu_positions').find('li').each(function() {
+//        var id = 'meals_attributes_' + i;
+//        $(this).attr('id', id);
+//        i++;
+//    });
+
+    $('.menu_positions').sortable({
+        update: function(event, ui) {
+            var n = 1
+            $(this).find('li').each(function() {
+                $(this).find('input[type=number]').attr('value', n);
+                n++;
+            });
+        }
+    });
+
+
+
 });
 
 

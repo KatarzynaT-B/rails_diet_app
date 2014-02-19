@@ -34,19 +34,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="menus_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="menus_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/menus_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="34" selection-start="432" selection-end="432" vertical-scroll-proportion="0.3985765" vertical-offset="194" max-vertical-offset="1717">
+            <state line="22" column="5" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="296" max-vertical-offset="1717">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dishes_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/dishes_controller.rb">
+      <file leaf-file-name="menu.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/menu.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="10" selection-start="1310" selection-end="1310" vertical-scroll-proportion="0.0" vertical-offset="681" max-vertical-offset="1666">
+            <state line="7" column="3" selection-start="243" selection-end="243" vertical-scroll-proportion="0.25813448" vertical-offset="0" max-vertical-offset="461">
               <folding />
             </state>
           </provider>
@@ -55,7 +55,7 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/menus/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="58" selection-start="1375" selection-end="1375" vertical-scroll-proportion="-8.153846" vertical-offset="366" max-vertical-offset="952">
+            <state line="23" column="17" selection-start="699" selection-end="699" vertical-scroll-proportion="4.6923075" vertical-offset="513" max-vertical-offset="935">
               <folding />
             </state>
           </provider>
@@ -64,7 +64,7 @@
       <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="33" selection-start="2243" selection-end="2243" vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="1751">
+            <state line="31" column="14" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2125">
               <folding>
                 <element signature="e#758#812#0" expanded="false" />
                 <element signature="e#870#918#0" expanded="false" />
@@ -125,8 +125,6 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/dishes.css.scss" />
         <option value="$PROJECT_DIR$/app/views/dishes/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/dishes/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/menu.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/menus.css.scss" />
         <option value="$PROJECT_DIR$/app/views/dishes/_ingredients_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/dishes_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/dishes.js" />
@@ -134,10 +132,12 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/products.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/menus.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/dish_types.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/helpers/menus_helper.rb" />
-        <option value="$PROJECT_DIR$/app/views/menus/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/menus_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/menus.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/menus/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app/models/menu.rb" />
       </list>
     </option>
   </component>
@@ -728,10 +728,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.50844854" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25192013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -773,11 +773,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_view/helpers/url_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="211" column="70" selection-start="10030" selection-end="10177" vertical-scroll-proportion="0.0" vertical-offset="3309" max-vertical-offset="10880" />
-      </provider>
-    </entry>
     <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/jquery-rails-3.0.4/vendor/assets/javascripts/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6045" column="4" selection-start="168202" selection-end="168202" vertical-scroll-proportion="0.3317757" vertical-offset="102419" max-vertical-offset="166311" />
@@ -905,11 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/menus/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.25185186" vertical-offset="0" max-vertical-offset="405" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dishes/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="66" selection-start="115" selection-end="115" vertical-scroll-proportion="0.1852861" vertical-offset="0" max-vertical-offset="367" />
@@ -951,21 +941,9 @@
         <state line="69" column="23" selection-start="1426" selection-end="1426" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1343" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/menus.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="17" selection-start="245" selection-end="245" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="731" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/meal.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="23" selection-start="93" selection-end="93" vertical-scroll-proportion="0.123188406" vertical-offset="0" max-vertical-offset="414" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/menu.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="51" selection-start="258" selection-end="258" vertical-scroll-proportion="0.24637681" vertical-offset="0" max-vertical-offset="414">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dishes/_form.html.erb">
@@ -1015,33 +993,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/menus/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="47" selection-start="388" selection-end="388" vertical-scroll-proportion="0.7133106" vertical-offset="80" max-vertical-offset="544">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/menus_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="32" selection-start="185" selection-end="185" vertical-scroll-proportion="0.21316615" vertical-offset="0" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="33" selection-start="2243" selection-end="2243" vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="1751">
-          <folding>
-            <element signature="e#758#812#0" expanded="false" />
-            <element signature="e#870#918#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/dishes_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="10" selection-start="1310" selection-end="1310" vertical-scroll-proportion="0.0" vertical-offset="681" max-vertical-offset="1666">
           <folding />
         </state>
       </provider>
@@ -1053,16 +1007,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/menus.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="563" selection-end="563" vertical-scroll-proportion="0.76551723" vertical-offset="347" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/dishes_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="10" selection-start="1310" selection-end="1310" vertical-scroll-proportion="0.0" vertical-offset="681" max-vertical-offset="1666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/menus/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="47" selection-start="388" selection-end="388" vertical-scroll-proportion="0.48045978" vertical-offset="80" max-vertical-offset="544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/menus/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/menus/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.23448277" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/menus/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="58" selection-start="1375" selection-end="1375" vertical-scroll-proportion="-8.153846" vertical-offset="366" max-vertical-offset="952">
+        <state line="23" column="17" selection-start="699" selection-end="699" vertical-scroll-proportion="4.6923075" vertical-offset="513" max-vertical-offset="935">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="14" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2125">
+          <folding>
+            <element signature="e#758#812#0" expanded="false" />
+            <element signature="e#870#918#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/menus_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="34" selection-start="432" selection-end="432" vertical-scroll-proportion="0.3985765" vertical-offset="194" max-vertical-offset="1717">
+        <state line="22" column="5" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="296" max-vertical-offset="1717">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/menu.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="3" selection-start="243" selection-end="243" vertical-scroll-proportion="0.25813448" vertical-offset="0" max-vertical-offset="461">
           <folding />
         </state>
       </provider>
