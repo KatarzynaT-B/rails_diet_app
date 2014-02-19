@@ -2,6 +2,7 @@ module MenusHelper
   def update_menu_with_values(menu, dishes)
     calories, protein, fat, carbs, meals_no = 0, 0, 0, 0, 0
     menu.meals.each do |meal|
+      next if meal.position == 0
       calories += dishes.find(meal.dish_id).dish_calories
       protein += dishes.find(meal.dish_id).dish_protein
       fat += dishes.find(meal.dish_id).dish_fat

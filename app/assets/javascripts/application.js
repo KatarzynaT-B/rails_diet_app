@@ -22,14 +22,17 @@ $(document).ready(function() {
     if ($('.meal_field_set').not(':hidden').length == 1) {
         $('.remove_meal_fields').hide();
     }
+    $('.position').hide();
 
     $('form').on('click', '.add_meal_fields', function(event) {
         var mealFieldSet = $('.meal_field_set'),
             currentMenuMeal = mealFieldSet.last(),
-            mealTemplate = '<div class="meal_field_set">' + currentMenuMeal.html() + '</div>',
+            mealTemplate = '<li><div class="meal_field_set">' + currentMenuMeal.html() + '</div></li>',
             mealNumber = mealFieldSet.length;
-        mealTemplate = mealTemplate.replace(/_\d+_/g, '_' + mealNumber + '_').replace(/\[\d+\]/g, '[' + mealNumber + ']');
-        $('.menu_positions').append(mealTemplate);
+        mealTemplate = mealTemplate
+            .replace(/_\d+_/g, '_' + mealNumber + '_')
+            .replace(/\[\d+\]/g, '[' + mealNumber + ']');
+        $('.menu_positions').append(mealTemplate).find('input[type=number]').last().attr('value', mealNumber + 1);
         if ($('form').hasClass('edit_menu')) {
             var uniqueId = new Date().getTime();
             var hiddenField = "<input id=\"menu_meals_attributes_" + mealNumber + "_id\" type=\"hidden\" value=\"" + uniqueId + "\" name=\"menu[meals_attributes][" + mealNumber + "][id]\">";
@@ -43,9 +46,13 @@ $(document).ready(function() {
     });
 
     $('.menu_positions').on('click', '.remove_meal_fields', function(event) {
-        $(this).parent('.meal_field_set').remove();
-        if ($('.ingredient_fields').not(':hidden').length == 1) {
-            $('.remove_ingredient_fields').hide();
+        $(this).parents('li')
+            .find('input[type=number]')
+                .attr('value', 0)
+                .end()
+            .hide();
+        if ($('.meal_field_set').not(':hidden').length == 1) {
+            $('.remove_meal_fields').hide();
         }
         event.preventDefault();
     });

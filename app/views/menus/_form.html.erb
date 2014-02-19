@@ -31,6 +31,9 @@
                     <%= meal_builder.label :dish_id, 'Wybierz danie' %>
                     <%= meal_builder.select :dish_id, @dishes.each.collect { |dish| [dish.dish_name, dish.id] } %>
                   </div>
+                  <div class="position">
+                    <%=meal_builder.number_field :position %>
+                  </div>
                   <%= link_to "Usuń posiłek", '#', class: 'remove_meal_fields' %>
                 </div>
               </li>
