@@ -1,0 +1,10 @@
+<h1><%= @month %></h1>
+<h3><%= @first_of_month %></h3>
+<h3><%= @last_of_month %></h3>
+
+<p>
+  <%= @first_of_month.wday %><br>
+  <%= @first_of_month.saturday? %><br>
+  <%= Time.days_in_month(@date.month, @date.year) %><br>
+  <%= @date.thursday? %><br>
+</p>
