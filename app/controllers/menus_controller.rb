@@ -91,7 +91,7 @@ class MenusController < ApplicationController
   end
 
   def menu_params
-    params.require(:menu).permit(:name, :meals_no, :calories, :protein, :fat, :carbs,
+    params.require(:menu).permit(:menu_date, :meals_no, :calories, :protein, :fat, :carbs,
                                  meals_attributes: [:id, :dish_type_id, :dish_id, :menu_id, :position])
   end
 end

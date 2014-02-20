@@ -132,7 +132,14 @@ $(document).ready(function() {
         }
     });
 
-
+    $('#menu_date').datepicker({
+        minDate: new Date(),
+        changeMonth: true,
+        changeYear: true,
+        showOtherMonths: true,
+        appendText: "DD/MM/RRRR",
+        dateFormat: "dd/mm/yy"
+    });
 
 });
 
