@@ -137,7 +137,6 @@ $(document).ready(function() {
         changeMonth: true,
         changeYear: true,
         showOtherMonths: true,
-        appendText: "DD/MM/RRRR",
         dateFormat: "dd/mm/yy"
     });
 

@@ -16,11 +16,11 @@
     <SUITE FILE_PATH="coverage/diet_app@db_migrate__2_.coverage" NAME="db:migrate (2) Coverage Results" MODIFIED="1391632284208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="diet_app" />
     <SUITE FILE_PATH="coverage/diet_app@db_drop__diet_app.coverage" NAME="db:drop: diet_app Coverage Results" MODIFIED="1391632406999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="diet_app" />
     <SUITE FILE_PATH="coverage/diet_app@db_migrate__1_.coverage" NAME="db:migrate (1) Coverage Results" MODIFIED="1391630969197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="diet_app" />
-    <SUITE FILE_PATH="coverage/diet_app@db_migrate__diet_app.coverage" NAME="db:migrate: diet_app Coverage Results" MODIFIED="1392902848623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="diet_app" />
-    <SUITE FILE_PATH="coverage/diet_app@Development__diet_app.coverage" NAME="Development: diet_app Coverage Results" MODIFIED="1392894392530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="diet_app" />
     <SUITE FILE_PATH="coverage/diet_app@routes__diet_app.coverage" NAME="routes: diet_app Coverage Results" MODIFIED="1392324357510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="diet_app" />
-    <SUITE FILE_PATH="coverage/diet_app@db_seed__diet_app.coverage" NAME="db:seed: diet_app Coverage Results" MODIFIED="1391633134252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="diet_app" />
+    <SUITE FILE_PATH="coverage/diet_app@db_migrate__diet_app.coverage" NAME="db:migrate: diet_app Coverage Results" MODIFIED="1392902848623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="diet_app" />
+    <SUITE FILE_PATH="coverage/diet_app@Development__diet_app.coverage" NAME="Development: diet_app Coverage Results" MODIFIED="1392990392238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="diet_app" />
     <SUITE FILE_PATH="coverage/diet_app@db_setup__diet_app.coverage" NAME="db:setup: diet_app Coverage Results" MODIFIED="1392653544345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="diet_app" />
+    <SUITE FILE_PATH="coverage/diet_app@db_seed__diet_app.coverage" NAME="db:seed: diet_app Coverage Results" MODIFIED="1391633134252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="diet_app" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -37,7 +37,16 @@
       <file leaf-file-name="calendars_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/calendars_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="4" selection-start="931" selection-end="931" vertical-scroll-proportion="0.8055556" vertical-offset="102" max-vertical-offset="884">
+            <state line="58" column="0" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.71568626" vertical-offset="548" max-vertical-offset="1360">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="time.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/core_ext/numeric/time.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="9" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1445">
               <folding />
             </state>
           </provider>
@@ -46,34 +55,16 @@
       <file leaf-file-name="calculations.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/core_ext/date_and_time/calculations.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="44" selection-start="4177" selection-end="4177" vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="4046">
+            <state line="202" column="8" selection-start="6552" selection-end="6552" vertical-scroll-proportion="0.0" vertical-offset="3226" max-vertical-offset="4046">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="calculations.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/core_ext/date/calculations.rb">
+        <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/core_ext/time/calculations.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="2" selection-start="265" selection-end="298" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2363">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="date.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/rubystubs20/date.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="733" column="8" selection-start="27603" selection-end="27603" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="23562">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="time.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/rubystubs20/time.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="687" column="8" selection-start="26906" selection-end="26906" vertical-scroll-proportion="0.0" vertical-offset="8874" max-vertical-offset="20247">
+            <state line="20" column="8" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0" vertical-offset="4488" max-vertical-offset="5151">
               <folding />
             </state>
           </provider>
@@ -82,8 +73,10 @@
       <file leaf-file-name="month.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/calendars/month.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="49" selection-start="170" selection-end="213" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="255">
-              <folding />
+            <state line="3" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="255">
+              <folding>
+                <marker date="1392911958693" expanded="true" signature="89:253" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,7 +134,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20140220105503_change_menu_date_type_column_in_menus.rb" />
         <option value="$PROJECT_DIR$/app/views/menus/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/menus_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/views/menus/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/models/menu.rb" />
@@ -152,6 +144,7 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/calendar_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/calendars/month.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/controllers/calendars_controller.rb" />
       </list>
     </option>
@@ -195,7 +188,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
@@ -326,6 +318,24 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diet_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rails_diet_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -387,6 +397,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -410,7 +421,7 @@
       <recent name="$PROJECT_DIR$/app/views/ingredients" />
     </key>
   </component>
-  <component name="RunManager" selected="Rake.db:migrate: diet_app">
+  <component name="RunManager" selected="Rails.Development: diet_app">
     <configuration default="false" name="db:drop: diet_app" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="diet_app" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -752,11 +763,10 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25192013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718894" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27870092" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48079878" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2907855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47926268" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937685" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32565284" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -764,10 +774,11 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718894" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937685" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -788,20 +799,10 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="32" />
+      <option name="time" value="33" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/articles/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="6" selection-start="26" selection-end="26" vertical-scroll-proportion="-0.37226278" vertical-offset="187" max-vertical-offset="629" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/articles_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="742" selection-end="742" vertical-scroll-proportion="1.0028735" vertical-offset="348" max-vertical-offset="969" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="6" selection-start="1279" selection-end="1279" vertical-scroll-proportion="0.33333334" vertical-offset="616" max-vertical-offset="1462" />
@@ -829,23 +830,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140205204301_add_dish_calories_column_to_dishes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="413">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="413" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140218135000_add_position_column_to_meals.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="12" selection-start="69" selection-end="69" vertical-scroll-proportion="0.041162226" vertical-offset="0" max-vertical-offset="413">
-          <folding />
-        </state>
+        <state line="1" column="12" selection-start="69" selection-end="69" vertical-scroll-proportion="0.041162226" vertical-offset="0" max-vertical-offset="413" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="24" selection-start="1705" selection-end="1705" vertical-scroll-proportion="0.6328502" vertical-offset="605" max-vertical-offset="1717">
-          <folding />
-        </state>
+        <state line="51" column="24" selection-start="1705" selection-end="1705" vertical-scroll-proportion="0.6328502" vertical-offset="605" max-vertical-offset="1717" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dishes/_form.html.erb">
@@ -899,9 +894,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/menus.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="563" selection-end="563" vertical-scroll-proportion="0.76551723" vertical-offset="347" max-vertical-offset="782">
-          <folding />
-        </state>
+        <state line="40" column="0" selection-start="563" selection-end="563" vertical-scroll-proportion="0.76551723" vertical-offset="347" max-vertical-offset="782" />
       </provider>
     </entry>
     <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_controller/metal/mime_responds.rb">
@@ -916,186 +909,117 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/menus/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.23448277" vertical-offset="0" max-vertical-offset="435">
-          <folding />
-        </state>
+        <state line="6" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.23448277" vertical-offset="0" max-vertical-offset="435" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/meal.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="112" selection-end="112" vertical-scroll-proportion="0.2724359" vertical-offset="0" max-vertical-offset="312">
-          <folding />
-        </state>
+        <state line="5" column="17" selection-start="112" selection-end="112" vertical-scroll-proportion="0.2724359" vertical-offset="0" max-vertical-offset="312" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140205162432_change_dishes_dish_calories.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="413">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="413" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140220105503_change_menu_date_type_column_in_menus.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.20581114" vertical-offset="0" max-vertical-offset="413">
-          <folding />
-        </state>
+        <state line="5" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.20581114" vertical-offset="0" max-vertical-offset="413" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140220105206_change_name_column_in_menus.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="43" selection-start="112" selection-end="112" vertical-scroll-proportion="0.08232445" vertical-offset="0" max-vertical-offset="413">
-          <folding />
-        </state>
+        <state line="2" column="43" selection-start="112" selection-end="112" vertical-scroll-proportion="0.08232445" vertical-offset="0" max-vertical-offset="413" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/menus/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="413">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="413" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/menus/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="34" selection-end="34" vertical-scroll-proportion="-2.0310078" vertical-offset="820" max-vertical-offset="1207">
-          <folding />
-        </state>
+        <state line="2" column="0" selection-start="34" selection-end="34" vertical-scroll-proportion="-2.0310078" vertical-offset="820" max-vertical-offset="1207" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/articles.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="413">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="413" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="0" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="1989">
-          <folding />
-        </state>
+        <state line="72" column="0" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="1989" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/menus/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="35" selection-start="426" selection-end="426" vertical-scroll-proportion="-3.0" vertical-offset="160" max-vertical-offset="935">
-          <folding />
-        </state>
+        <state line="14" column="35" selection-start="426" selection-end="426" vertical-scroll-proportion="-3.0" vertical-offset="160" max-vertical-offset="935" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/dish.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="39" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
+        <state line="6" column="39" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/menu.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="245" selection-end="245" vertical-scroll-proportion="0.39030612" vertical-offset="0" max-vertical-offset="392">
-          <folding />
-        </state>
+        <state line="9" column="0" selection-start="245" selection-end="245" vertical-scroll-proportion="0.39030612" vertical-offset="0" max-vertical-offset="392" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/menus/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="52" selection-start="307" selection-end="307" vertical-scroll-proportion="0.65891474" vertical-offset="0" max-vertical-offset="544">
-          <folding />
-        </state>
+        <state line="15" column="52" selection-start="307" selection-end="307" vertical-scroll-proportion="0.65891474" vertical-offset="0" max-vertical-offset="544" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dishes/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dishes/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="66" selection-start="115" selection-end="115" vertical-scroll-proportion="0.17571059" vertical-offset="0" max-vertical-offset="387">
-          <folding />
-        </state>
+        <state line="4" column="66" selection-start="115" selection-end="115" vertical-scroll-proportion="0.17571059" vertical-offset="0" max-vertical-offset="387" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dishes/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="36" selection-start="607" selection-end="607" vertical-scroll-proportion="1.0542636" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
+        <state line="24" column="36" selection-start="607" selection-end="607" vertical-scroll-proportion="1.0542636" vertical-offset="0" max-vertical-offset="663" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/calendars/day.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
-          <folding />
-        </state>
+        <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="47" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1309">
-          <folding />
-        </state>
+        <state line="14" column="47" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1309" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.ru">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="23" selection-start="1547" selection-end="1553" vertical-scroll-proportion="0.3327645" vertical-offset="349" max-vertical-offset="2516">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#758#812#0" expanded="false" />
-            <element signature="e#870#918#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="625" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="10" selection-start="960" selection-end="960" vertical-scroll-proportion="0.57429045" vertical-offset="81" max-vertical-offset="680">
-          <folding />
-        </state>
+        <state line="25" column="10" selection-start="960" selection-end="960" vertical-scroll-proportion="0.57429045" vertical-offset="81" max-vertical-offset="680" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/dishes_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="10" selection-start="1310" selection-end="1310" vertical-scroll-proportion="1.3333334" vertical-offset="0" max-vertical-offset="1666">
-          <folding />
-        </state>
+        <state line="48" column="10" selection-start="1310" selection-end="1310" vertical-scroll-proportion="1.3333334" vertical-offset="0" max-vertical-offset="1666" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/menus_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="52" selection-start="2222" selection-end="2222" vertical-scroll-proportion="2.5833333" vertical-offset="0" max-vertical-offset="1751">
-          <folding />
-        </state>
+        <state line="93" column="52" selection-start="2222" selection-end="2222" vertical-scroll-proportion="2.5833333" vertical-offset="0" max-vertical-offset="1751" />
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs20/time.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="687" column="8" selection-start="26906" selection-end="26906" vertical-scroll-proportion="0.0" vertical-offset="8874" max-vertical-offset="20247">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs20/date.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="733" column="8" selection-start="27603" selection-end="27603" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="23562">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/core_ext/date_and_time/calculations.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="44" selection-start="4177" selection-end="4177" vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="4046">
           <folding />
         </state>
       </provider>
@@ -1107,16 +1031,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="35" selection-start="5321" selection-end="5321" vertical-scroll-proportion="0.2875817" vertical-offset="1864" max-vertical-offset="2499">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#758#812#0" expanded="false" />
+            <element signature="e#870#918#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs20/date.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="733" column="8" selection-start="27603" selection-end="27603" vertical-scroll-proportion="0.33333334" vertical-offset="12257" max-vertical-offset="23562">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/calendars/month.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="49" selection-start="170" selection-end="213" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="255">
+        <state line="3" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="255">
+          <folding>
+            <marker date="1392911958693" expanded="true" signature="89:253" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/core_ext/time/calculations.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="8" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0" vertical-offset="4488" max-vertical-offset="5151">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/core_ext/numeric/time.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="9" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Ruby200/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/core_ext/date_and_time/calculations.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="202" column="8" selection-start="6552" selection-end="6552" vertical-scroll-proportion="0.0" vertical-offset="3226" max-vertical-offset="4046">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/calendars_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="4" selection-start="931" selection-end="931" vertical-scroll-proportion="0.8055556" vertical-offset="102" max-vertical-offset="884">
+        <state line="58" column="0" selection-start="1767" selection-end="1767" vertical-scroll-proportion="0.71568626" vertical-offset="548" max-vertical-offset="1360">
           <folding />
         </state>
       </provider>

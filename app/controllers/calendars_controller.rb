@@ -18,24 +18,52 @@ class CalendarsController < ApplicationController
 
     @date = Time.now
     @month = months[@date.month]
-    @first_of_month = @date.beginning_of_month
-    @last_of_month = @date.end_of_month
+    @weeks = count_number_of_involved_weeks(@date)
   end
 
-  def check_weekday(date)
+  def weekday_number(date)
     date.wday == 0 ? 7 : date.wday
   end
 
-  def count_days_in_month(date)
+  def count_days(date)
     Time.days_in_month(date.month, date.year)
   end
 
-  def count_number_of_week_rows(date)
-    days = count_days_in_month(date)
-    first_of_month = date.beginning_of_month
-    
-    8 - day
+  def total_weeks_number(date)
+    first_of_month = weekday_number(date.beginning_of_month)
+    days_after_first_sunday = count_days(date) - (8 - first_of_month)
+    (days_after_first_sunday % 7 > 0) ? (2 + days_after_first_sunday / 7) : (1 + days_after_first_sunday / 7)
   end
+
+  def first_week(date)
+    list = []
+    first_of_month = weekday_number(date.beginning_of_month)
+    days_till_first = first_of_month - 1
+    prev_month_date = date.beginning_of_month - 1 .day
+    days_in_prev_month = count_days(prev_month_date)
+    prev_month_days_list = []
+    current_month_days_first_week = []
+    current_month_day = 1
+    while days_till_first > 0
+      prev_month_days_list << days_in_prev_month
+      days_till_first -= 1
+      days_in_prev_month -=1
+    end
+    until first_of_month > 7
+      current_month_days_first_week << current_month_day
+      current_month_day += 1
+      first_of_month += 1
+    end
+    list.concat(prev_month_days_list.reverse!).concat(current_month_days_first_week)
+  end
+
+  def build_weeks(date)
+    weeks_for_month = {}
+    (1..total_weeks_number(date)).each do |week_number|
+      weeks_for_month[week_number] = {}
+    end
+  end
+
 
   #private
   #
