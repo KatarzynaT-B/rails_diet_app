@@ -12,7 +12,9 @@ DietApp::Application.routes.draw do
 
   get '/about' => 'base#about'
   get '/contact' => 'base#contact'
-  get '/calendars/(:month)' => 'calendars#month'
+  get '/calendars/day/(:date)' => 'calendars#day'
+  get '/calendars/month/(:year_month)' => 'calendars#month'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
